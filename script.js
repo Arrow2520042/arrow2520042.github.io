@@ -34,15 +34,15 @@ function enableImageZoom() {
 
 document.addEventListener("DOMContentLoaded", () => {
     const folderMappings = {
-        "2inMedia": "/galeria/page1subpages/page1-1.html",
-        "2.5inMedia": "/galeria/page1subpages/page1-2.html",
-        "2.6inMedia": "/galeria/page1subpages/page1-3.html",
-        "2.8inMedia": "/galeria/page1subpages/page1-4.html",
-        "3inMedia": "/galeria/page1subpages/page1-5.html",
-        "3.5inMedia": "/galeria/page1subpages/page1-6.html",
-        "3.94inMedia": "/galeria/page1subpages/page1-7.html",
-        "5.25inMedia": "/galeria/page1subpages/page1-8.html",
-        "8inMedia": "/galeria/page1subpages/page1-9.html"
+        "2inMedia": "/page1subpages/page1-1.html",
+        "2.5inMedia": "/page1subpages/page1-2.html",
+        "2.6inMedia": "/page1subpages/page1-3.html",
+        "2.8inMedia": "/page1subpages/page1-4.html",
+        "3inMedia": "/page1subpages/page1-5.html",
+        "3.5inMedia": "/page1subpages/page1-6.html",
+        "3.94inMedia": "/page1subpages/page1-7.html",
+        "5.25inMedia": "/page1subpages/page1-8.html",
+        "8inMedia": "/page1subpages/page1-9.html"
     };
 
     const currentPage = window.location.pathname;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchImages() {
         try {
-            const response = await fetch(`/galeria/${folderPath}/`);
+            const response = await fetch(`/${folderPath}/`);
             if (!response.ok) {
                 console.error("Failed to fetch folder contents");
                 return;
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     blockWrapper.classList.add("block-wrapper");
 
                     const anchor = document.createElement("a");
-                    anchor.href = `/galeria/${folderPath}/${fileName}`;
+                    anchor.href = `/${folderPath}/${fileName}`;
                     anchor.classList.add("blockZ", nameWithoutExtension);
 
                     const span = document.createElement("span");
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const style = document.createElement("style");
                     style.textContent = `
                         .${nameWithoutExtension} {
-                            background-image: url(/galeria/${folderPath}/${fileName});
+                            background-image: url(/${folderPath}/${fileName});
                         }
                     `;
                     document.head.appendChild(style);

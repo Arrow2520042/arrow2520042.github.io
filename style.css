@@ -32,7 +32,7 @@
     left: 20px; /* Adjust as needed */
     display: flex;
     align-items: center;
-    background-image: url(/galeria/grafiki/backarrow.jpg);
+    background-image: url(grafiki/backarrow.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -111,11 +111,11 @@ body{
 }
 
 .CPUs{
-    background-image: url(grafiki/);
+    
 }
 
 .HDDs{
-    background-image: url(grafiki/);
+    
 }
 
 .Light-Bulbs{
