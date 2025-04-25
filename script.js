@@ -42,7 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "3.5inMedia": "/page1subpages/page1-6.html",
         "3.94inMedia": "/page1subpages/page1-7.html",
         "5.25inMedia": "/page1subpages/page1-8.html",
-        "8inMedia": "/page1subpages/page1-9.html"
+        "8inMedia": "/page1subpages/page1-9.html",
+        "32sMedia": "/page13subpages/page13-1.html",
+        "35sMedia": "/page13subpages/page13-2.html",
+        "48sMedia": "/page13subpages/page13-3.html",
+        "72sMedia": "/page13subpages/page13-4.html",
+        "87sMedia": "/page13subpages/page13-5.html"
     };
 
     const currentPage = window.location.pathname;
@@ -57,56 +62,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchImages() {
         try {
+            console.log("Fetching images from folder:", folderPath);
             const response = await fetch(`/${folderPath}/`);
             if (!response.ok) {
-                console.error("Failed to fetch folder contents");
+                console.error("Failed to fetch folder contents:", response.status);
                 return;
             }
-
+    
             const parser = new DOMParser();
             const html = await response.text();
             const doc = parser.parseFromString(html, "text/html");
             const links = Array.from(doc.querySelectorAll("a"));
-
+    
             links.forEach(link => {
                 const href = link.getAttribute("href");
+                console.log("Found file:", href);
                 if (href && (href.endsWith(".jpg") || href.endsWith(".jpeg"))) {
                     const fileName = href.split("/").pop();
-                    const nameWithoutExtension = fileName.replace(/\.(jpg|jpeg)$/i, "");
-
+                    const originalName = fileName.replace(/\.(jpg|jpeg)$/i, ""); // Oryginalna nazwa
+                    const nameWithPrefix = `photo-of-${originalName.replace(/[^a-zA-Z0-9-_]/g, "-")}`; // Nazwa z prefiksem
+    
                     // Sprawdź, czy element już istnieje
-                    if (document.querySelector(`.${nameWithoutExtension}`)) {
-                        console.log(`Element dla ${nameWithoutExtension} już istnieje.`);
+                    if (document.querySelector(`.${nameWithPrefix}`)) {
+                        console.log(`Element dla ${nameWithPrefix} już istnieje.`);
                         return;
                     }
-
+    
+                    console.log("Adding image:", fileName);
+    
                     // Create the new block element
                     const blockWrapper = document.createElement("div");
                     blockWrapper.classList.add("block-wrapper");
-
+    
                     const anchor = document.createElement("a");
                     anchor.href = `/${folderPath}/${fileName}`;
-                    anchor.classList.add("blockZ", nameWithoutExtension);
-
+                    anchor.classList.add("blockZ", nameWithPrefix);
+    
                     const span = document.createElement("span");
                     span.classList.add("block-caption");
-                    span.textContent = nameWithoutExtension;
-
+                    span.textContent = decodeURIComponent(originalName); // Wyświetlana nazwa z przywróconymi spacjami i nawiasami
+    
                     blockWrapper.appendChild(anchor);
                     blockWrapper.appendChild(span);
                     container.appendChild(blockWrapper);
-
+    
                     // Add CSS dynamically
                     const style = document.createElement("style");
                     style.textContent = `
-                        .${nameWithoutExtension} {
+                        .${nameWithPrefix} {
                             background-image: url(/${folderPath}/${fileName});
                         }
                     `;
                     document.head.appendChild(style);
                 }
             });
-
+    
             // Ponownie przypisz nasłuchiwanie do nowych elementów
             enableImageZoom();
         } catch (error) {
