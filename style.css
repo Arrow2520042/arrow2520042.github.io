@@ -1,5 +1,5 @@
 .footer, .header{
-    background-color: #36816b89;
+    background-color: #84d6bd;
     min-width: 100%;
     text-align: center;
     display: flex;
@@ -23,22 +23,23 @@
 }
 .header-link:hover{
     text-decoration: underline;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
 }
 .header-button{
     width: 25px; /* Adjust as needed */
-    height: 25px; /* Adjust as needed */
+    height: 25px;/* Adjust as needed */
     position: absolute;
     left: 20px; /* Adjust as needed */
     display: flex;
     align-items: center;
-    background-image: url(grafiki/backarrow.jpg);
+    background-color: transparent;
+    background-image: url(grafiki/arrowback.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 body{
-    background-color: #fcf4e6;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -111,11 +112,11 @@ body{
 }
 
 .CPUs{
-    
+    background-image: url(grafiki/2024-03-09\ 22.59.56.jpg);
 }
 
 .HDDs{
-    
+    background-image: url(grafiki/Discs.jpg);
 }
 
 .Light-Bulbs{
@@ -134,8 +135,8 @@ body{
     background-image: url(grafiki/ISA\ UltraSound\ Gravis.jpg);
 }
 
-.Plastic-Airplanes-Models{
-    background-image: url(grafiki/Heinkel\ He\ 111\ Z2\ Zwilling\ with\ Bv\ 246\ HagelKorn\ Hasegawa\ 72.jpg);
+.Plastic-Airplane-Models{
+    background-image: url(grafiki/samolot.jpg);
 }
 
 .Porcelain-Cups{
@@ -155,14 +156,15 @@ body{
 }
 
 .TDK-D{
-
+    background-image: url(grafiki/!\ D.jpg);
 }
+
 .Trains-Bahn-H0{
     background-image: url(grafiki/HR2478\ Rivarossi\ BR\ E251.jpg);
 }
 
 .Wanted{
-
+    background-image: url(grafiki/questionmark.jpg);
 }
 
 .in2{
@@ -174,7 +176,7 @@ body{
 }
 
 .in2-6{
-    background-image: url(grafiki/2\,8.jpg);
+    background-image: url(grafiki/2\,6.jpg);
 }
 
 .in2-8{
