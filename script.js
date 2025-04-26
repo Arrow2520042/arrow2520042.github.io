@@ -3,28 +3,28 @@ function enableImageZoom() {
 
     blockZElements.forEach(element => {
         element.addEventListener("click", (event) => {
-            event.preventDefault(); // Zapobiega domyślnemu otwieraniu linku
+            event.preventDefault(); 
 
-            // Pobierz link do obrazu z atrybutu href
+            
             const imageUrl = element.getAttribute("href");
 
-            // Stwórz kontener dla powiększonego obrazu
+            
             const overlay = document.createElement("div");
             overlay.classList.add("image-overlay");
 
-            // Stwórz element obrazu
+            
             const img = document.createElement("img");
             img.src = imageUrl;
             img.alt = "Powiększone zdjęcie";
             img.classList.add("enlarged-image");
 
-            // Dodaj obraz do kontenera
+            
             overlay.appendChild(img);
 
-            // Dodaj kontener do body
+            
             document.body.appendChild(overlay);
 
-            // Zamknij powiększenie po kliknięciu w overlay
+            
             overlay.addEventListener("click", () => {
                 document.body.removeChild(overlay);
             });
@@ -47,23 +47,57 @@ document.addEventListener("DOMContentLoaded", () => {
         "35sMedia": "/page13subpages/page13-2.html",
         "48sMedia": "/page13subpages/page13-3.html",
         "72sMedia": "/page13subpages/page13-4.html",
-        "87sMedia": "/page13subpages/page13-5.html"
+        "87sMedia": "/page13subpages/page13-5.html",
+        "discsMedia": "/subpages/page2.html",
+        "rmvdiscsMedia": "/subpages/page3.html",
+        "tapescassettesMedia": "/subpages/page4.html",
+        "otherMedia": "/subpages/page5.html",
+        "butterfliesMedia": "/subpages/page6.html",
+        "cpusMedia": "/subpages/page7.html",
+        "hddsMedia": "/subpages/page8.html",
+        "bulbsMedia": "/subpages/page9.html",
+        "lotsMedia": "/subpages/page10.html",
+        "mineralsMedia": "/subpages/page11.html",
+        "cardsMedia": "/subpages/page12.html",
+        "cupsMedia": "/subpages/page14.html",
+        "santanasMedia": "/subpages/page15.html",
+        "stampsMedia": "/subpages/page16.html",
+        "stickersMedia": "/subpages/page17.html",//DODAC PLIK 17
+        "tdkMedia": "/subpages/page18.html",
+        "trainsMedia": "/subpages/page19.html",
+        "wantedMedia": "/subpages/page20.html"
     };
 
     const currentPage = window.location.pathname;
+    console.log("Current page:", currentPage);
+
+    // Znajdź folder Media na podstawie bieżącej strony
     const folderPath = Object.keys(folderMappings).find(folder => folderMappings[folder] === currentPage);
+    console.log("Folder path:", folderPath);
 
     if (!folderPath) {
         console.error("No folder mapping found for this page.");
         return;
     }
 
-    const container = document.querySelector(".container");
+    // Ścieżka do folderu Media
+    const mediaFolderUrl = `/${folderPath}`;
+    console.log("Media folder URL:", mediaFolderUrl);
+
+    // Ścieżka do folderu docelowego (subpages)
+    const folderUrl = folderMappings[folderPath].replace(/\/[^/]+\.html$/, "");
+    console.log("Folder URL:", folderUrl);
 
     async function fetchImages() {
         try {
-            console.log("Fetching images from folder:", folderPath);
-            const response = await fetch(`/${folderPath}/`);
+            const container = document.querySelector(".container");
+            if (!container) {
+                console.error("Container element not found on the page.");
+                return;
+            }
+    
+            console.log("Fetching images from:", `${mediaFolderUrl}/`);
+            const response = await fetch(`${mediaFolderUrl}/`);
             if (!response.ok) {
                 console.error("Failed to fetch folder contents:", response.status);
                 return;
@@ -78,11 +112,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 const href = link.getAttribute("href");
                 console.log("Found file:", href);
                 if (href && (href.endsWith(".jpg") || href.endsWith(".jpeg"))) {
-                    const fileName = href.split("/").pop();
-                    const originalName = fileName.replace(/\.(jpg|jpeg)$/i, ""); // Oryginalna nazwa
-                    const nameWithPrefix = `photo-of-${originalName.replace(/[^a-zA-Z0-9-_]/g, "-")}`; // Nazwa z prefiksem
+                    let fileName = href.split("/").pop();
     
-                    // Sprawdź, czy element już istnieje
+                    // Usuń nawiasy () z nazwy pliku
+                    fileName = fileName.replace(/[()]/g, "");
+    
+                    const originalName = fileName.replace(/\.(jpg|jpeg)$/i, "");
+                    const nameWithPrefix = `photo-of-${originalName.replace(/[^a-zA-Z0-9-_]/g, "-")}`;
+    
                     if (document.querySelector(`.${nameWithPrefix}`)) {
                         console.log(`Element dla ${nameWithPrefix} już istnieje.`);
                         return;
@@ -90,34 +127,31 @@ document.addEventListener("DOMContentLoaded", () => {
     
                     console.log("Adding image:", fileName);
     
-                    // Create the new block element
                     const blockWrapper = document.createElement("div");
                     blockWrapper.classList.add("block-wrapper");
     
                     const anchor = document.createElement("a");
-                    anchor.href = `/${folderPath}/${fileName}`;
+                    anchor.href = `${mediaFolderUrl}/${fileName}`;
                     anchor.classList.add("blockZ", nameWithPrefix);
     
                     const span = document.createElement("span");
                     span.classList.add("block-caption");
-                    span.textContent = decodeURIComponent(originalName); // Wyświetlana nazwa z przywróconymi spacjami i nawiasami
+                    span.textContent = decodeURIComponent(originalName);
     
                     blockWrapper.appendChild(anchor);
                     blockWrapper.appendChild(span);
                     container.appendChild(blockWrapper);
     
-                    // Add CSS dynamically
                     const style = document.createElement("style");
                     style.textContent = `
                         .${nameWithPrefix} {
-                            background-image: url(/${folderPath}/${fileName});
+                            background-image: url(${mediaFolderUrl}/${fileName});
                         }
                     `;
                     document.head.appendChild(style);
                 }
             });
     
-            // Ponownie przypisz nasłuchiwanie do nowych elementów
             enableImageZoom();
         } catch (error) {
             console.error("Error fetching images:", error);
@@ -125,4 +159,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     fetchImages();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOMContentLoaded fired");
+
+    // Usuń fade-out, jeśli istnieje
+    document.body.classList.remove("fade-out");
+
+    // Dodaj fade-in
+    document.body.classList.add("fade-in");
+
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+        link.addEventListener("click", (event) => {
+            if (link.href && link.href.startsWith(window.location.origin)) {
+                event.preventDefault();
+                document.body.classList.add("fade-out");
+
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 50); // Czas trwania animacji fade-out
+            }
+        });
+    });
 });

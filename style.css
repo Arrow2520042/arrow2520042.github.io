@@ -26,10 +26,10 @@
     color: rgb(255, 255, 255);
 }
 .header-button{
-    width: 25px; /* Adjust as needed */
-    height: 25px;/* Adjust as needed */
+    width: 25px; 
+    height: 25px;
     position: absolute;
-    left: 20px; /* Adjust as needed */
+    left: 20px;
     display: flex;
     align-items: center;
     background-color: transparent;
@@ -38,12 +38,24 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
 body{
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.05s ease-in-out;
 }
+
+body.fade-in {
+    opacity: 1;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
 .container{
     display: flex;
     flex: 1;
@@ -51,21 +63,21 @@ body{
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
-    margin-top: 10vh; /* Adjust for header height */
-    margin-bottom: 10vh; /* Adjust for footer height */
+    margin-top: 10vh; 
+    margin-bottom: 10vh; 
     
 }
 .block-caption{
-    margin-top: 10px; /* Odstęp między obrazem a podpisem */
-    font-size: 16px; /* Rozmiar czcionki podpisu */
-    font-weight: bold; /* Pogrubienie tekstu */
-    text-align: center; /* Wyśrodkowanie tekstu */
+    margin-top: 10px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    text-align: center; 
     color: #000;
 }
 .block-wrapper{
     display: flex;
-    flex-direction: column; /* Ustaw elementy w kolumnie */
-    align-items: center; /* Wyśrodkuj blok i podpis w poziomie */
+    flex-direction: column; 
+    align-items: center; 
     margin: 10px; 
 }
 .block, .blockZ{
@@ -221,4 +233,30 @@ body{
     max-height: 90%;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 10px;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
