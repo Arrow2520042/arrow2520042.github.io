@@ -16,15 +16,13 @@
     height: 5vh;
 }
 .header-link{
-    font-family: 'Playfair Display', sans-serif;
     text-decoration: none;
     color: #000000;
     font-size: 25px;
     font-weight: bolder;
-    cursor: pointer;
-    z-index: 10;
 }
 .header-link:hover{
+    text-decoration: underline;
     color: rgb(255, 255, 255);
 }
 .header-button{
@@ -39,8 +37,6 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    cursor: pointer;
-    z-index: 10;
 }
 
 body{
@@ -230,12 +226,6 @@ body.fade-out {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.image-overlay.visible {
-    opacity: 1;
 }
 
 .enlarged-image {
@@ -243,7 +233,6 @@ body.fade-out {
     max-height: 90%;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
 }
 
 .fade-in {
@@ -252,29 +241,6 @@ body.fade-out {
 
 .fade-out {
     animation: fadeOut 0.5s ease-out forwards;
-}
-
-.image-overlay .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-    z-index: 1001;
-}
-
-.image-overlay .arrow.left {
-    left: 20px;
-}
-
-.image-overlay .arrow.right {
-    right: 20px;
-}
-
-.image-overlay .arrow:hover {
-    color: #ccc;
 }
 
 @keyframes fadeIn {

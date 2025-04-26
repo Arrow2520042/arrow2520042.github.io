@@ -1,75 +1,37 @@
-// funkcja powieskzania
 function enableImageZoom() {
     const blockZElements = document.querySelectorAll(".blockZ");
-    let currentIndex = 0; // Indeks aktualnie wyświetlanego obrazu
-    let images = []; // Lista obrazów w katalogu
 
-    // Pobierz wszystkie obrazy w katalogu
     blockZElements.forEach(element => {
-        images.push(element.getAttribute("href"));
-    });
-
-    blockZElements.forEach((element, index) => {
         element.addEventListener("click", (event) => {
-            event.preventDefault();
-            currentIndex = index; // Ustaw aktualny indeks na kliknięty obraz
+            event.preventDefault(); 
 
-            // Stwórz overlay
+            
+            const imageUrl = element.getAttribute("href");
+
+            
             const overlay = document.createElement("div");
             overlay.classList.add("image-overlay");
 
-            // Stwórz element obrazu
+            
             const img = document.createElement("img");
-            img.src = images[currentIndex];
+            img.src = imageUrl;
             img.alt = "Powiększone zdjęcie";
             img.classList.add("enlarged-image");
 
-            // Dodaj obraz do overlay
+            
             overlay.appendChild(img);
 
-            // Dodaj overlay do dokumentu
+            
             document.body.appendChild(overlay);
 
-            // Dodaj klasę 'visible' po krótkim czasie, aby uruchomić animację
-            setTimeout(() => {
-                overlay.classList.add("visible");
-            }, 10);
-
-            // Obsługa klawiatury
-            const handleKeydown = (event) => {
-                if (event.key === "ArrowRight") {
-                    // Następny obraz
-                    currentIndex = (currentIndex + 1) % images.length;
-                    img.src = images[currentIndex];
-                } else if (event.key === "ArrowLeft") {
-                    // Poprzedni obraz
-                    currentIndex = (currentIndex - 1 + images.length) % images.length;
-                    img.src = images[currentIndex];
-                } else if (event.key === "Escape") {
-                    // Zamknij overlay
-                    overlay.classList.remove("visible");
-                    setTimeout(() => {
-                        document.body.removeChild(overlay);
-                        document.removeEventListener("keydown", handleKeydown);
-                    }, 300); // Czas trwania animacji (0.3s)
-                }
-            };
-
-            document.addEventListener("keydown", handleKeydown);
-
-            // Zamknij overlay po kliknięciu
+            
             overlay.addEventListener("click", () => {
-                overlay.classList.remove("visible");
-                setTimeout(() => {
-                    document.body.removeChild(overlay);
-                    document.removeEventListener("keydown", handleKeydown);
-                }, 300); // Czas trwania animacji (0.3s)
+                document.body.removeChild(overlay);
             });
         });
     });
 }
 
-// Obsluga folderow i podstron
 document.addEventListener("DOMContentLoaded", () => {
     const folderMappings = {
         "2inMedia": "/page1subpages/page1-1.html",
@@ -199,7 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchImages();
 });
 
-//obsluga fade out i fade in
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOMContentLoaded fired");
 
@@ -223,62 +184,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-// obsluga nav
-document.addEventListener("DOMContentLoaded", () => {
-    // Wybierz wszystkie elementy nawigacyjne
-    const navElements = document.querySelectorAll(".block-wrapper, .header-link, .header-button");
-
-    // Dodaj obsługę kliknięcia dla każdego elementu
-    navElements.forEach(nav => {
-        nav.addEventListener("click", () => {
-            const url = nav.getAttribute("data-url");
-            if (url) {
-                window.location.href = url; // Przekierowanie na podstronę
-            }
-        });
-    });
-});
-
-// lazy loading dla block i blockZ
-document.addEventListener("DOMContentLoaded", () => {
-    // Wybierz elementy z klasami .block i .blockZ
-    const lazyElements = document.querySelectorAll(".block, .blockZ");
-
-    // Utwórz wspólny Intersection Observer
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const element = entry.target;
-                const bgImage = element.getAttribute("data-bg");
-
-                if (bgImage) {
-                    element.style.backgroundImage = `url(${bgImage})`;
-                    element.removeAttribute("data-bg"); // Usuń atrybut po załadowaniu
-                }
-
-                observer.unobserve(element); // Przestań obserwować element po załadowaniu
-            }
-        });
-    });
-
-    // Obserwuj wszystkie elementy z klasami .block i .blockZ
-    lazyElements.forEach(element => observer.observe(element));
-});
-
-// Obsluga backspace
-document.addEventListener("DOMContentLoaded", () => {
-    const headerButton = document.querySelector(".header-button");
-
-    document.addEventListener("keydown", (event) => {
-        // Sprawdź, czy naciśnięto Backspace
-        if (event.key === "Backspace") {
-            event.preventDefault(); // Zapobiegaj domyślnemu zachowaniu przeglądarki
-            const url = headerButton.getAttribute("data-url");
-            if (url) {
-                window.location.href = url; // Przekierowanie na stronę z `data-url`
-            }
-        }
-    });
-});
-
