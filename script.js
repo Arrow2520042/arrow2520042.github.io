@@ -32,7 +32,7 @@ function enableImageZoom() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
     const folderMappings = {
         "2inMedia": "/page1subpages/page1-1.html",
         "2.5inMedia": "/page1subpages/page1-2.html",
@@ -159,6 +159,142 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     fetchImages();
+});*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    const folderToPageMapping = {
+        "2inMedia": "/page1subpages/page1-1.html",
+        "2.5inMedia": "/page1subpages/page1-2.html",
+        "2.6inMedia": "/page1subpages/page1-3.html",
+        "2.8inMedia": "/page1subpages/page1-4.html",
+        "3inMedia": "/page1subpages/page1-5.html",
+        "3.5inMedia": "/page1subpages/page1-6.html",
+        "3.94inMedia": "/page1subpages/page1-7.html",
+        "5.25inMedia": "/page1subpages/page1-8.html",
+        "8inMedia": "/page1subpages/page1-9.html",
+        "32sMedia": "/page13subpages/page13-1.html",
+        "35sMedia": "/page13subpages/page13-2.html",
+        "48sMedia": "/page13subpages/page13-3.html",
+        "72sMedia": "/page13subpages/page13-4.html",
+        "87sMedia": "/page13subpages/page13-5.html",
+        "discsMedia": "/subpages/page2.html",
+        "rmvdiscsMedia": "/subpages/page3.html",
+        "tapescassettesMedia": "/subpages/page4.html",
+        "otherMedia": "/subpages/page5.html",
+        "butterfliesMedia": "/subpages/page6.html",
+        "cpusMedia": "/subpages/page7.html",
+        "hddsMedia": "/subpages/page8.html",
+        "bulbsMedia": "/subpages/page9.html",
+        "lotsMedia": "/subpages/page10.html",
+        "mineralsMedia": "/subpages/page11.html",
+        "cardsMedia": "/subpages/page12.html",
+        "cupsMedia": "/subpages/page14.html",
+        "santanasMedia": "/subpages/page15.html",
+        "stampsMedia": "/subpages/page16.html",
+        "stickersMedia": "/subpages/page17.html",
+        "tdkMedia": "/subpages/page18.html",
+        "trainsMedia": "/subpages/page19.html",
+        "wantedMedia": "/subpages/page20.html"
+    };
+
+    // Funkcja do usuwania rozszerzenia z nazwy pliku
+    function removeExtension(filename) {
+        return filename.replace(/\.[^/.]+$/, "");
+    }
+
+    // Funkcja do tworzenia bezpiecznej nazwy klasy CSS
+    function createSafeClassName(filename) {
+        return `photo-of-${removeExtension(filename)
+            .replace(/\s+/g, '-') // Zamień spacje na myślniki
+            .replace(/[^a-zA-Z0-9-]/g, '') // Usuń znaki specjalne
+            .toLowerCase()}`;
+    }
+
+    // Funkcja do tworzenia CSS
+    function generateCSS(folder, filename) {
+        const className = createSafeClassName(filename);
+        const cssRule = `.${className} { background-image: url("../${folder}/${filename.replace(/ /g, '%20')}"); }`;
+        return cssRule;
+    }
+
+    // Funkcja do znajdowania aktualnego folderu na podstawie URL
+    function getCurrentFolder() {
+        const currentPath = window.location.pathname;
+        for (const [folder, page] of Object.entries(folderToPageMapping)) {
+            if (page === currentPath) {
+                return folder;
+            }
+        }
+        return null;
+    }
+
+    // Funkcja do bezpiecznego dodawania reguł CSS
+    function addCSSRule(styleElement, rule) {
+        try {
+            styleElement.sheet.insertRule(rule, styleElement.sheet.cssRules.length);
+        } catch (e) {
+            console.error('Failed to insert CSS rule:', rule, e);
+        }
+    }
+
+    // Główna funkcja generująca elementy
+    function generateElementsFromJSON(jsonData) {
+        const currentFolder = getCurrentFolder();
+        if (!currentFolder || !jsonData[currentFolder]) {
+            console.log('No matching folder found for this page');
+            return;
+        }
+
+        const container = document.querySelector('.container');
+        if (!container) {
+            console.error('Container element not found');
+            return;
+        }
+
+        const styleElement = document.createElement('style');
+        document.head.appendChild(styleElement);
+
+        // Generujemy elementy tylko dla aktualnego folderu
+        jsonData[currentFolder].forEach(filename => {
+            // Tworzymy element HTML
+            const blockWrapper = document.createElement('div');
+            blockWrapper.className = 'block-wrapper';
+            
+            const fileNameWithoutExt = removeExtension(filename);
+            const className = createSafeClassName(filename);
+            
+            const link = document.createElement('a');
+            link.href = `../${currentFolder}/${filename.replace(/ /g, '%20')}`;
+            link.className = `blockZ ${className}`;
+            
+            const caption = document.createElement('span');
+            caption.className = 'block-caption';
+            caption.textContent = fileNameWithoutExt;
+            
+            blockWrapper.appendChild(link);
+            blockWrapper.appendChild(caption);
+            container.appendChild(blockWrapper);
+            
+            // Dodajemy regułę CSS
+            const cssRule = generateCSS(currentFolder, filename);
+            addCSSRule(styleElement, cssRule);
+        });
+    }
+
+    // Ładowanie pliku JSON
+    fetch('../images.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            generateElementsFromJSON(data);
+        })
+        .catch(error => {
+            console.error('Error loading JSON:', error);
+        });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
