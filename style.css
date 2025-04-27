@@ -9,22 +9,28 @@
     border-radius: 5px;
     position: static;
 }
+
 .header{
     height: 7vh;
 }
+
 .footer{
     height: 5vh;
 }
+
 .header-link{
     text-decoration: none;
     color: #000000;
     font-size: 25px;
     font-weight: bolder;
+    cursor: pointer;
+    z-index: 10;
 }
+
 .header-link:hover{
-    text-decoration: underline;
     color: rgb(255, 255, 255);
 }
+
 .header-button{
     width: 25px; 
     height: 25px;
@@ -37,6 +43,8 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
+    z-index: 10;
 }
 
 body{
@@ -215,32 +223,32 @@ body.fade-out {
     background-image: url(grafiki/8.jpg);
 }
 
-.image-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.scale32{
+    background-image: url(grafiki/32.jpg);
 }
 
-.enlarged-image {
-    max-width: 90%;
-    max-height: 90%;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 10px;
+.scale35{
+    background-image: url(grafiki/35.jpg);
+}
+
+.scale48{
+    background-image: url(grafiki/48.jpg);
+}
+
+.scale72{
+    background-image: url(grafiki/72.jpg);
+}
+
+.scale87{
+    background-image: url(grafiki/87.jpg);
 }
 
 .fade-in {
-    animation: fadeIn 0.5s ease-in forwards;
+    animation: fadeIn 0.05s ease-in forwards;
 }
 
 .fade-out {
-    animation: fadeOut 0.5s ease-out forwards;
+    animation: fadeOut 0.05s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -260,3 +268,72 @@ body.fade-out {
         opacity: 0;
     }
 }
+
+.image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-overlay img {
+    max-width: 75vw;
+    max-height: 75vh;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    border: #000000 3px solid;
+}
+
+@media (max-width: 768px) {
+    .block, .blockZ {
+        width: 80vw;
+        height: 45vw;
+    }
+
+    .block-caption {
+        font-size: 14px;
+    }
+
+    .header-link {
+        font-size: 20px;
+    }
+
+    .header-button {
+        width: 20px;
+        height: 20px;
+        left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .block, .blockZ {
+        width: 90vw;
+        height: 50vw;
+    }
+
+    .block-caption {
+        font-size: 12px;
+    }
+
+    .header-link {
+        font-size: 18px;
+    }
+
+    .header-button {
+        width: 18px;
+        height: 18px;
+        left: 8px;
+    }
+}
+
