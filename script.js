@@ -303,7 +303,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "tapescassettes-audio-compactMedia": "/page4-1subpages/page4-1-1.html",
         "tapescassettes-audio-smallMedia": "/page4-1subpages/page4-1-2.html",
         "tapescassettes-dataMedia": "/page4subpages/page4-2.html",
-        "tapescassettes-videoMedia": "/page4subpages/page4-3.html"
+        "tapescassettes-videoMedia": "/page4subpages/page4-3.html",
+        "tapescassettes-audio-otherMedia": "/page4-1subpages/page4-1-3.html"
     };
 
     function removeExtension(filename) {

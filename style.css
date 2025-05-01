@@ -250,6 +250,90 @@ body.fade-out {
     background-image: url(grafiki/87.jpg);
 }
 
+.Discs-Audio-Magnetic{
+    background-image: url(grafiki/discaudiomagnetic.jpg);
+}
+
+.Discs-Audio-Optical{
+    background-image: url(grafiki/discaudiooptical.jpg);
+}
+
+.Discs-Audio-Other{
+    background-image: url(grafiki/discaudioother.jpg);
+}
+
+.Discs-Audio{
+    background-image: url(grafiki/discsaudio.jpg);
+}
+
+.Discs-Audio-Vinyls{
+    background-image: url(grafiki/discaudiovinyl.jpg);
+}
+
+.Discs-Data{
+    background-image: url(grafiki/discsdata.jpg);
+}
+
+.Discs-Data-Optical{
+    background-image: url(grafiki/discsdataoptical.jpg);
+}
+
+.Discs-Data-Vinyls{
+    background-image: url(grafiki/discsdatavinyls.jpg);
+}
+
+.Discs-Video-Magnetic{
+    background-image: url(grafiki/discsvideomagnetic.jpg);
+}
+
+.Discs-Video-Optical{
+    background-image: url(grafiki/discsvideooptical.jpg);
+}
+
+.Discs-Video-Vinyls{
+    background-image: url(grafiki/discsvideovinyls.jpg);
+}
+
+.Discs-Video{
+    background-image: url(grafiki/discsvideo.jpg);
+}
+
+.Discs-Photo{
+    background-image: url(grafiki/discsphoto.jpg);
+}
+
+.RDiscs-Magnetic{
+    background-image: url(grafiki/rdiscsmagnetic.jpg);
+}
+
+.RDiscs-Optical{
+    background-image: url(grafiki/rdiscsoptical.jpg);
+}
+
+.Tapescassettes-Compact{
+    background-image: url(grafiki/tapescassettesaudiocompact.jpg);
+}
+
+.Tapescassettes-Small{
+    background-image: url(grafiki/tapescassettesaudiosmall.jpg);
+}
+
+.Tapescassettes-Audio{
+    background-image: url(grafiki/tapescassettesaudio.jpg);
+}
+
+.Tapescassettes-Data{
+    background-image: url(grafiki/tapescassettesdata.jpg);
+}
+
+.Tapescassettes-Video{
+    background-image: url(grafiki/tapescassettesvideo.jpg);
+}
+
+.Tapescassettes-Other{
+    background-image: url(grafiki/tapescassettesaudioother.jpg);
+}
+
 .fade-in {
     animation: fadeIn 0.05s ease-in forwards;
 }
