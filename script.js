@@ -256,30 +256,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-//test swipe gestures na mobile
-let touchStartX = 0;
-let touchEndX = 0;
-
-function handleGesture() {
-    if (!overlayActive) return; // tylko jak overlay aktywny
-    const swipeThreshold = 50; // minimalny ruch żeby zaliczyć swipe
-    if (touchEndX < touchStartX - swipeThreshold) {
-        showNextImage(); // Funkcja zmiany na następne zdjęcie
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
-        showPreviousImage(); // Funkcja zmiany na poprzednie zdjęcie
-    }
-}
-
-document.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-}, false);
-
-document.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleGesture();
-}, false);
-//
 //nowa wersja .json loading + lazy loading
 document.addEventListener('DOMContentLoaded', function() {
     const folderToPageMapping = {
@@ -297,9 +273,6 @@ document.addEventListener('DOMContentLoaded', function() {
         "48sMedia": "/page13subpages/page13-3.html",
         "72sMedia": "/page13subpages/page13-4.html",
         "87sMedia": "/page13subpages/page13-5.html",
-        "discsMedia": "/subpages/page2.html",
-        "rmvdiscsMedia": "/subpages/page3.html",
-        "tapescassettesMedia": "/subpages/page4.html",
         "otherMedia": "/subpages/page5.html",
         "butterfliesMedia": "/subpages/page6.html",
         "cpusMedia": "/subpages/page7.html",
@@ -314,7 +287,23 @@ document.addEventListener('DOMContentLoaded', function() {
         "stickersMedia": "/subpages/page17.html",
         "tdkMedia": "/subpages/page18.html",
         "trainsMedia": "/subpages/page19.html",
-        "wantedMedia": "/subpages/page20.html"
+        "wantedMedia": "/subpages/page20.html",
+        "discs-audio-magneticMedia": "/page2-1subpages/page2-1-1.html",
+        "discs-audio-opticalMedia": "/page2-1subpages/page2-1-2.html",
+        "discs-audio-otherMedia": "/page2-1subpages/page2-1-3.html",
+        "discs-audio-vinylsMedia": "/page2-1subpages/page2-1-4.html",
+        "discs-data-opticalMedia": "/page2-2subpages/page2-2-1.html",
+        "discs-data-vinylsMedia": "/page2-2subpages/page2-2-2.html",
+        "discs-video-magneticMedia": "/page2-3subpages/page2-3-1.html",
+        "discs-video-opticalMedia": "/page2-3subpages/page2-3-2.html",
+        "discs-video-vinylsMedia": "/page2-3subpages/page2-3-3.html",
+        "discs-photoMedia": "/page2subpages/page2-4.html",
+        "rdiscs-magneticMedia": "/page3subpages/page3-1.html",
+        "rdiscs-opticalMedia": "/page3subpages/page3-2.html",
+        "tapescassettes-audio-compactMedia": "/page4-1subpages/page4-1-1.html",
+        "tapescassettes-audio-smallMedia": "/page4-1subpages/page4-1-2.html",
+        "tapescassettes-dataMedia": "/page4subpages/page4-2.html",
+        "tapescassettes-videoMedia": "/page4subpages/page4-3.html"
     };
 
     function removeExtension(filename) {
@@ -362,7 +351,6 @@ document.addEventListener('DOMContentLoaded', function() {
             link.href = `../${currentFolder}/${filename.replace(/ /g, '%20')}`;
             link.className = `blockZ ${className}`;
 
-            // ⬇️ Zamiast background-image, ustawiamy data-bg
             link.setAttribute('data-bg', `../${currentFolder}/${filename.replace(/ /g, '%20')}`);
 
             const caption = document.createElement('span');
@@ -375,9 +363,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Lazy loading dla .block i .blockZ
+    // Lazy loading dla .blockZ
     function setupLazyLoading() {
-        const lazyElements = document.querySelectorAll(".block, .blockZ");
+        const lazyElements = document.querySelectorAll(".blockZ");
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -386,7 +374,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     const bg = element.getAttribute('data-bg');
                     if (bg) {
                         element.style.backgroundImage = `url('${bg}')`;
-                        console.log(`Lazy loaded background: ${bg}`);
                         element.removeAttribute('data-bg');
                     } else {
                         console.log('No data-bg attribute found for element:', element);
@@ -410,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(data => {
         generateElementsFromJSON(data);
-        setupLazyLoading(); // <--- URUCHAMIAMY lazy loading po wygenerowaniu elementów!
+        setupLazyLoading(); 
     })
     .catch(error => {
         console.error('Error loading JSON:', error);
