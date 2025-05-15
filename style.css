@@ -12,7 +12,7 @@
 }
 
 .header{
-    height: 7vh;
+    height: 10vh;
 }
 
 .footer{
@@ -38,6 +38,16 @@
     color: rgb(255, 255, 255);
 }
 
+.gallery-desc {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #333;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    padding: 0 1rem;
+}
+
+
 .header-button{
     width: 25px; 
     height: 25px;
@@ -54,13 +64,49 @@
     z-index: 10;
 }
 
+.scroll-down, .scroll-up{
+    width: 25px; 
+    height: 25px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scroll-up{
+    right: 20px;
+    background-image: url(grafiki/arrowup.jpg);
+}
+
+.scroll-down{
+    right: 20px;
+    background-image: url(grafiki/arrowdown.jpg);
+}
+
+.scroll-up:hover{
+    background-image: url(grafiki/arrowupwhite.jpg);
+}
+
+.scroll-down:hover{
+    background-image: url(grafiki/arrowdownwhite.jpg);
+}
+
+.header-button:hover{
+    background-image: url(grafiki/arrowbackwhite.jpg);
+}
+
 body{
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     opacity: 0;
-    transition: opacity 0.05s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
 body.fade-in {
@@ -114,12 +160,20 @@ body.fade-out {
     transform: scale(1.05);
 }
 
-.Diskettes {
-    background-image: url(grafiki/1\ Dyskietki.jpg);
+.Discs-Audio-Optical-Recordable{
+    background-image: url(grafiki/discsaudioopticalrecordable.jpg);
+}
+
+.Discs-Data-Optical-Recordable{
+    background-image: url(grafiki/discsdataopticalrecordable.jpg);
+}
+
+.Diskettes{
+    background-image: url(grafiki/Dyskietki_1.jpg);
 }
 
 .Discs {
-    background-image: url(grafiki/2\ Disc.JPG);
+    background-image: url(grafiki/2\ Disc.jpg);
 }
 
 .Removable-Discs {
@@ -335,12 +389,32 @@ body.fade-out {
 }
 
 .fade-in {
-    animation: fadeIn 0.05s ease-in forwards;
+    animation: fadeIn 0.5s ease-in forwards;
 }
 
 .fade-out {
-    animation: fadeOut 0.05s ease-out forwards;
+    animation: fadeOut 0.5s ease-out forwards;
 }
+
+.download-button {
+    width: 350px;
+    height: 50px;
+    padding: 10px 20px;
+    background-color: #84d6bd;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+  }
+  
+  .download-button:hover {
+    background-color: #6cb3a0;
+  }
 
 @keyframes fadeIn {
     from {
@@ -405,6 +479,10 @@ body.fade-out {
         height: 20px;
         left: 10px;
     }
+
+    .footer, .header{
+        height: 10vh;
+    }
 }
 
 @media (max-width: 480px) {
@@ -425,6 +503,10 @@ body.fade-out {
         width: 18px;
         height: 18px;
         left: 8px;
+    }
+
+    .footer, .header{
+        height: 10vh;
     }
 }
 

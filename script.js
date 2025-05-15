@@ -2,16 +2,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("fade-out");
     document.body.classList.add("fade-in");
+
     const links = document.querySelectorAll("a");
     links.forEach(link => {
         link.addEventListener("click", (event) => {
+            if (link.classList.contains("download-button")) {
+                return;
+            }
+
             if (link.href && link.href.startsWith(window.location.origin)) {
                 event.preventDefault();
                 document.body.classList.add("fade-out");
 
                 setTimeout(() => {
                     window.location.href = link.href;
-                }, 50); 
+                }, 500); 
             }
         });
     });
@@ -154,7 +159,9 @@ document.addEventListener('DOMContentLoaded', function() {
         "tapescassettes-audio-smallMedia": "/page4-1subpages/page4-1-2.html",
         "tapescassettes-dataMedia": "/page4subpages/page4-2.html",
         "tapescassettes-videoMedia": "/page4subpages/page4-3.html",
-        "tapescassettes-audio-otherMedia": "/page4-1subpages/page4-1-3.html"
+        "tapescassettes-audio-otherMedia": "/page4-1subpages/page4-1-3.html",
+        "discs-data-opticalrecordableMedia": "/page2-2subpages/page2-2-3.html",
+        "discs-audio-opticalrecordableMedia": "/page2-1subpages/page2-1-5.html"
     };
 
     function removeExtension(filename) {
@@ -254,4 +261,18 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Error loading JSON:', error);
     });
 });
-
+// Obsluga scrolla
+document.querySelector('.scroll-down').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  });
+  document.querySelector('.scroll-up').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
