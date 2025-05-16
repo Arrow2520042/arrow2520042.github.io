@@ -7,8 +7,9 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    position: static;
+    position: relative;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .header{
@@ -23,6 +24,8 @@
     margin: 2px 0; 
     font-size: 16px; 
     line-height: 1.2; 
+    text-align: center;
+    word-break: break-word;
 }
 
 .header-link{
@@ -32,6 +35,9 @@
     font-weight: bolder;
     cursor: pointer;
     z-index: 10;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .header-link:hover{
@@ -173,7 +179,7 @@ body.fade-out {
 }
 
 .Discs {
-    background-image: url(grafiki/2\ Disc.jpg);
+    background-image: url(grafiki/Disc_2.jpg);
 }
 
 .Removable-Discs {
@@ -481,7 +487,7 @@ body.fade-out {
     }
 
     .footer, .header{
-        height: 10vh;
+        height: 12vh;
     }
 }
 
@@ -508,5 +514,6 @@ body.fade-out {
     .footer, .header{
         height: 10vh;
     }
+    
 }
 
