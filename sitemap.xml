@@ -5,11 +5,88 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-
 <url>
   <loc>https://tapesandcassettes.com/</loc>
-  <lastmod>2025-05-17T18:04:28+00:00</lastmod>
+</url>
+<url>
+  <loc>https://tapesandcassettes.com/index.html</loc>
 </url>
 
+<!-- Główne podstrony -->
+<url><loc>https://tapesandcassettes.com/subpages/page1.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page2.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page3.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page4.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page5.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page6.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page7.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page8.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page9.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page10.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page11.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page12.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page13.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page14.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page15.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page16.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page17.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page18.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page19.html</loc></url>
+<url><loc>https://tapesandcassettes.com/subpages/page20.html</loc></url>
+
+<!-- page1subpages -->
+<url><loc>https://tapesandcassettes.com/page1subpages/page1-1.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page1subpages/page1-2.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page1subpages/page1-3.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page1subpages/page1-4.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page1subpages/page1-5.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page1subpages/page1-6.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page1subpages/page1-7.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page1subpages/page1-8.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page1subpages/page1-9.html</loc></url>
+
+<!-- page2-1subpages -->
+<url><loc>https://tapesandcassettes.com/page2-1subpages/page2-1-1.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2-1subpages/page2-1-2.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2-1subpages/page2-1-3.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2-1subpages/page2-1-4.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2-1subpages/page2-1-5.html</loc></url>
+
+<!-- page2-2subpages -->
+<url><loc>https://tapesandcassettes.com/page2-2subpages/page2-2-1.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2-2subpages/page2-2-2.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2-2subpages/page2-2-3.html</loc></url>
+
+<!-- page2-3subpages -->
+<url><loc>https://tapesandcassettes.com/page2-3subpages/page2-3-1.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2-3subpages/page2-3-2.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2-3subpages/page2-3-3.html</loc></url>
+
+<!-- page2subpages -->
+<url><loc>https://tapesandcassettes.com/page2subpages/page2-1.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2subpages/page2-2.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2subpages/page2-3.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page2subpages/page2-4.html</loc></url>
+
+<!-- page3subpages -->
+<url><loc>https://tapesandcassettes.com/page3subpages/page3-1.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page3subpages/page3-2.html</loc></url>
+
+<!-- page4-1subpages -->
+<url><loc>https://tapesandcassettes.com/page4-1subpages/page4-1-1.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page4-1subpages/page4-1-2.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page4-1subpages/page4-1-3.html</loc></url>
+
+<!-- page4subpages -->
+<url><loc>https://tapesandcassettes.com/page4subpages/page4-1.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page4subpages/page4-2.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page4subpages/page4-3.html</loc></url>
+
+<!-- page13subpages -->
+<url><loc>https://tapesandcassettes.com/page13subpages/page13-1.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page13subpages/page13-2.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page13subpages/page13-3.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page13subpages/page13-4.html</loc></url>
+<url><loc>https://tapesandcassettes.com/page13subpages/page13-5.html</loc></url>
 
 </urlset>

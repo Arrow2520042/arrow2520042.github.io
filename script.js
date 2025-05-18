@@ -1,4 +1,4 @@
-//obsluga fade-in fade-out
+//Obsluga fade-in fade-out
 document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("fade-out");
     document.body.classList.add("fade-in");
@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 setTimeout(() => {
                     window.location.href = link.href;
-                }, 500); 
+                }, 800); 
             }
         });
     });
 });
-// obsluga nav
+//Obsluga nav
 document.addEventListener("DOMContentLoaded", () => {
     const navElements = document.querySelectorAll(".block-wrapper, .header-link, .header-button");
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-//obsluga powieszkania zdjec
+//Obsluga powieszkania zdjec
 document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = -1;
     let blockZElements = [];
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         openOverlay(currentIndex);
     });
 });
-// Obsluga backspace
+//Obsluga backspace
 document.addEventListener("DOMContentLoaded", () => {
     const headerButton = document.querySelector(".header-button");
 
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-//nowa wersja .json loading + lazy loading
+//Nowa wersja .json loading + lazy loading
 document.addEventListener('DOMContentLoaded', function() {
     const folderToPageMapping = {
         "2inMedia": "/page1subpages/page1-1.html",
@@ -223,27 +223,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Lazy loading dla .blockZ
     function setupLazyLoading() {
-        const lazyElements = document.querySelectorAll(".blockZ");
+    const lazyElements = document.querySelectorAll(".blockZ");
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const element = entry.target;
-                    const bg = element.getAttribute('data-bg');
-                    if (bg) {
-                        element.style.backgroundImage = `url('${bg}')`;
-                        element.removeAttribute('data-bg');
-                    } else {
-                        console.log('No data-bg attribute found for element:', element);
-                    }
-                    element.classList.add('loaded');
-                    observer.unobserve(element);
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                const bg = element.getAttribute('data-bg');
+                if (bg) {
+                    element.style.backgroundImage = `url('${bg}')`;
+                    element.removeAttribute('data-bg');
                 }
-            });
+                element.classList.add('loaded');
+                observer.unobserve(element);
+            }
         });
+    }, {
+        rootMargin: "350px 0px"
+    });
 
-        lazyElements.forEach(element => observer.observe(element));
-    }
+    lazyElements.forEach(element => observer.observe(element));
+}
 
     // Ładowanie pliku JSON
     fetch('../images.json')
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Error loading JSON:', error);
     });
 });
-// Obsluga scrolla
+//Obsluga scroll-down
 document.querySelector('.scroll-down').addEventListener('click', function(e) {
     e.preventDefault();
     window.scrollTo({
@@ -269,6 +269,7 @@ document.querySelector('.scroll-down').addEventListener('click', function(e) {
       behavior: 'smooth'
     });
   });
+//Obsluga scroll-up
   document.querySelector('.scroll-up').addEventListener('click', function(e) {
     e.preventDefault();
     window.scrollTo({
@@ -276,3 +277,10 @@ document.querySelector('.scroll-down').addEventListener('click', function(e) {
       behavior: 'smooth'
     });
   });
+//Anomacja przyciskow scroll
+  document.querySelectorAll('.scroll-up, .scroll-down').forEach(btn => {
+    btn.addEventListener('click', function() {
+        btn.classList.add('clicked');
+        setTimeout(() => btn.classList.remove('clicked'), 300);
+    });
+});

@@ -55,25 +55,26 @@
 
 
 .header-button{
-    width: 25px; 
-    height: 25px;
+    width: 40px; 
+    height: 40px;
     position: absolute;
     left: 20px;
     display: flex;
     align-items: center;
     background-color: transparent;
-    background-image: url(grafiki/arrowback.jpg);
+    background-image: url(grafiki/arrback.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
     z-index: 10;
+    border-radius: 15px;
 }
 
 .scroll-down, .scroll-up{
-    width: 25px; 
-    height: 25px;
-    position: absolute;
+    width: 40px; 
+    height: 40px;
+    position: fixed;
     display: flex;
     align-items: center;
     background-color: transparent;
@@ -81,29 +82,31 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
-    z-index: 10;
+    z-index: 100;
+    right: 20px;
+    border-radius: 15px;
 }
 
 .scroll-up{
-    right: 20px;
-    background-image: url(grafiki/arrowup.jpg);
+    bottom: 2vh;
+    background-image: url(grafiki/arrup.jpg);
 }
 
 .scroll-down{
-    right: 20px;
-    background-image: url(grafiki/arrowdown.jpg);
+    top: 3.5vh;
+    background-image: url(grafiki/arrdown.jpg);
 }
 
 .scroll-up:hover{
-    background-image: url(grafiki/arrowupwhite.jpg);
+    background-image: url(grafiki/arrupw.jpg);
 }
 
 .scroll-down:hover{
-    background-image: url(grafiki/arrowdownwhite.jpg);
+    background-image: url(grafiki/arrdownw.jpg);
 }
 
 .header-button:hover{
-    background-image: url(grafiki/arrowbackwhite.jpg);
+    background-image: url(grafiki/arrbackw.jpg);
 }
 
 body{
@@ -112,7 +115,15 @@ body{
     flex-direction: column;
     min-height: 100vh;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.8s ease-out forwards;
 }
 
 body.fade-in {
@@ -166,6 +177,161 @@ body.fade-out {
     transform: scale(1.05);
 }
 
+.download-button {
+    width: 350px;
+    height: 50px;
+    padding: 10px 20px;
+    background-color: #84d6bd;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+  }
+  
+  .download-button:hover {
+    background-color: #6cb3a0;
+  }
+
+.image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-overlay img {
+    max-width: 75vw;
+    max-height: 75vh;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    border: #000000 3px solid;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.2);}
+    100% { transform: scale(1);}
+}
+
+.scroll-up.clicked,
+.scroll-down.clicked {
+    animation: pulse 0.3s;
+}
+
+@media (max-width: 768px) {
+    .block, .blockZ {
+        width: 80vw;
+        height: 45vw;
+    }
+
+    .block-caption {
+        font-size: 14px;
+    }
+
+    .header-link {
+        font-size: 20px;
+    }
+
+    .header-button {
+        width: 25px;
+        height: 25px;
+        left: 10px;
+    }
+
+    .footer, .header{
+        height: 12vh;
+    }
+
+    .scroll-up, .scroll-down{
+        width: 25px; 
+        height: 25px;
+        border-radius: 5px;
+        right: 15px;
+    }
+
+    .scroll-up{
+        bottom: 9vh;
+    }
+
+    .scroll-down{
+        top: 9vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .block, .blockZ {
+        width: 90vw;
+        height: 50vw;
+    }
+
+    .block-caption {
+        font-size: 12px;
+    }
+
+    .header-link {
+        font-size: 18px;
+    }
+
+    .header-button {
+        width: 22px;
+        height: 22px;
+        left: 8px;
+    }
+
+    .footer, .header{
+        height: 10vh;
+    }
+
+    .scroll-up, .scroll-down{
+        width: 22px; 
+        height: 22px;
+        border-radius: 5px;
+        right: 15px;
+    }
+
+    .scroll-down{
+        top: 7vh;
+    }
+
+    .scroll-up{
+        bottom: 7vh;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 .Discs-Audio-Optical-Recordable{
     background-image: url(grafiki/discsaudioopticalrecordable.jpg);
 }
@@ -199,7 +365,7 @@ body.fade-out {
 }
 
 .CPUs{
-    background-image: url(grafiki/2024-03-09\ 22.59.56.jpg);
+    background-image: url(grafiki/cpu.jpg);
 }
 
 .HDDs{
@@ -393,127 +559,3 @@ body.fade-out {
 .Tapescassettes-Other{
     background-image: url(grafiki/tapescassettesaudioother.jpg);
 }
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in forwards;
-}
-
-.fade-out {
-    animation: fadeOut 0.5s ease-out forwards;
-}
-
-.download-button {
-    width: 350px;
-    height: 50px;
-    padding: 10px 20px;
-    background-color: #84d6bd;
-    color: black;
-    text-align: center;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    text-decoration: none;
-  }
-  
-  .download-button:hover {
-    background-color: #6cb3a0;
-  }
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-.image-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.image-overlay img {
-    max-width: 75vw;
-    max-height: 75vh;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
-    border: #000000 3px solid;
-}
-
-@media (max-width: 768px) {
-    .block, .blockZ {
-        width: 80vw;
-        height: 45vw;
-    }
-
-    .block-caption {
-        font-size: 14px;
-    }
-
-    .header-link {
-        font-size: 20px;
-    }
-
-    .header-button {
-        width: 20px;
-        height: 20px;
-        left: 10px;
-    }
-
-    .footer, .header{
-        height: 12vh;
-    }
-}
-
-@media (max-width: 480px) {
-    .block, .blockZ {
-        width: 90vw;
-        height: 50vw;
-    }
-
-    .block-caption {
-        font-size: 12px;
-    }
-
-    .header-link {
-        font-size: 18px;
-    }
-
-    .header-button {
-        width: 18px;
-        height: 18px;
-        left: 8px;
-    }
-
-    .footer, .header{
-        height: 10vh;
-    }
-    
-}
-
