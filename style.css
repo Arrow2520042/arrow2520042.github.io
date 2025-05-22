@@ -17,7 +17,7 @@
 }
 
 .footer{
-    height: 7vh;
+    height: 10vh;
 }
 
 .footer p {
@@ -88,12 +88,12 @@
 }
 
 .scroll-up{
-    bottom: 2vh;
+    bottom: 3vh;
     background-image: url(grafiki/arrup.jpg);
 }
 
 .scroll-down{
-    top: 3.5vh;
+    top: 3vh;
     background-image: url(grafiki/arrdown.jpg);
 }
 
@@ -116,6 +116,7 @@ body{
     min-height: 100vh;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
+    font-family: sans-serif;
 }
 
 .fade-in {
@@ -234,43 +235,50 @@ body.fade-out {
     animation: pulse 0.3s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 380px) {
     .block, .blockZ {
-        width: 80vw;
-        height: 45vw;
+        width: 90vw;
+        height: 50vw;
     }
 
     .block-caption {
-        font-size: 14px;
+        font-size: 10px;
     }
 
     .header-link {
-        font-size: 20px;
+        font-size: 16px;
+    }
+
+    .header-button, .scroll-up, .scroll-down{
+        width: 18px !important;
+        height: 18px !important;
     }
 
     .header-button {
-        width: 25px;
-        height: 25px;
-        left: 10px;
+        left: 8px;
     }
 
     .footer, .header{
-        height: 12vh;
+        height: 17vh !important;
+        flex-direction: row;
+    }
+
+    .header p, .footer p{
+        padding-right: 40px !important;
+        padding-left: 40px !important;
     }
 
     .scroll-up, .scroll-down{
-        width: 25px; 
-        height: 25px;
         border-radius: 5px;
         right: 15px;
     }
 
-    .scroll-up{
-        bottom: 9vh;
+    .scroll-down{
+        top: 12vh !important;
     }
 
-    .scroll-down{
-        top: 9vh;
+    .scroll-up{
+        bottom: 12vh !important;
     }
 }
 
@@ -288,19 +296,26 @@ body.fade-out {
         font-size: 18px;
     }
 
+    .header-button, .scroll-up, .scroll-down{
+        width: 22px !important;
+        height: 22px !important;
+    }
+
     .header-button {
-        width: 22px;
-        height: 22px;
         left: 8px;
     }
 
     .footer, .header{
-        height: 10vh;
+        height: 14vh;
+        flex-direction: row;
+    }
+
+    .header p{
+        padding-right: 50px;
+        padding-left: 50px;
     }
 
     .scroll-up, .scroll-down{
-        width: 22px; 
-        height: 22px;
         border-radius: 5px;
         right: 15px;
     }
@@ -311,6 +326,53 @@ body.fade-out {
 
     .scroll-up{
         bottom: 7vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .block, .blockZ {
+        width: 80vw;
+        height: 45vw;
+    }
+
+    .block-caption {
+        font-size: 14px;
+    }
+
+    .header-link {
+        font-size: 20px;
+    }
+
+    .header-button, .scroll-up, .scroll-down{
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .header-button {
+        left: 10px;
+    }
+
+    .footer, .header{
+        height: 14vh;
+        flex-direction: row;
+    }
+
+    .header p{
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    .scroll-up, .scroll-down{
+        border-radius: 5px;
+        right: 15px;
+    }
+
+    .scroll-up{
+        bottom: 10vh;
+    }
+
+    .scroll-down{
+        top: 10vh;
     }
 }
 
