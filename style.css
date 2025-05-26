@@ -6,10 +6,10 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
     position: relative;
     flex-direction: column;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 .header{
@@ -88,12 +88,12 @@
 }
 
 .scroll-up{
-    bottom: 3vh;
+    bottom: 2.5vh;
     background-image: url(grafiki/arrup.jpg);
 }
 
 .scroll-down{
-    top: 3vh;
+    top: 2.5vh;
     background-image: url(grafiki/arrdown.jpg);
 }
 
@@ -110,6 +110,8 @@
 }
 
 body{
+    margin: 0;
+    padding: 0;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
