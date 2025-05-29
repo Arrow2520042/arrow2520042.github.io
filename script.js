@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            if (link.href && link.href.startsWith(window.location.origin)) {
+            if (link.href && link.href.startsWith(window.location.origin) && !link.closest('.dropdown-content') && !link.closest('.dropdown')) {
                 event.preventDefault();
                 document.body.classList.add("fade-out");
 
@@ -283,4 +283,63 @@ document.querySelector('.scroll-down').addEventListener('click', function(e) {
         btn.classList.add('clicked');
         setTimeout(() => btn.classList.remove('clicked'), 300);
     });
+});
+//hamburger menu
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".dropdown > a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            if (window.innerWidth < 1300) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                parent.classList.toggle("open");
+            }
+        });
+    });
+
+    document.querySelectorAll(".sub-dropdown > a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            if (window.innerWidth < 1300) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                parent.classList.toggle("open");
+            }
+        });
+    });
+
+    document.querySelectorAll(".sub-sub-dropdown > a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            if (window.innerWidth < 1300) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                parent.classList.toggle("open");
+            }
+        });
+    });
+});
+//mobile and desktop header version
+document.addEventListener('DOMContentLoaded', function() {
+    const desktopVersion = document.querySelector('.desktop-version');
+    const mobileVersion = document.querySelector('.mobile-version');
+    const breakpoint = 820; 
+
+    function updateHeaderVersion() {
+        if (window.innerWidth > breakpoint) {
+            desktopVersion.style.display = 'flex'; 
+            mobileVersion.style.display = 'none'; 
+        } else {
+            desktopVersion.style.display = 'none'; 
+            mobileVersion.style.display = 'flex'; 
+        }
+    }
+
+    updateHeaderVersion();
+
+    window.addEventListener('resize', updateHeaderVersion);
 });
