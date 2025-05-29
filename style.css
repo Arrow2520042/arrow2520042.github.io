@@ -459,7 +459,7 @@ body.fade-out {
 
     .header-button {
         left: 10px;
-        top: 10vh;
+        top: 12vh;
     }
 
     .header-logo-mobile {
@@ -472,7 +472,7 @@ body.fade-out {
     } 
 
     .footer, .header{
-        height: 14vh !important;
+        height: 16vh !important;
         flex-direction: row;
     }
 
@@ -502,11 +502,11 @@ body.fade-out {
     }
 
     .scroll-down{
-        top: 10vh !important;
+        top: 12vh !important;
     }
 
     .scroll-up{
-        bottom: 10vh !important;
+        bottom: 12vh !important;
     }
 
     .gallery-desc {
@@ -663,7 +663,7 @@ body.fade-out {
 
     .header-button {
         left: 10px;
-        top: 9vh;
+        top: 11vh;
     }
 
     .header-logo-mobile {
@@ -676,7 +676,7 @@ body.fade-out {
     } 
 
     .footer, .header{
-        height: 14vh !important;
+        height: 16vh !important;
         flex-direction: row;
     }
 
@@ -706,11 +706,11 @@ body.fade-out {
     }
 
     .scroll-down{
-        top: 9vh !important;
+        top: 11vh !important;
     }
 
     .scroll-up{
-        bottom: 9vh !important;
+        bottom: 11vh !important;
     }
 
     .gallery-desc {
@@ -1155,7 +1155,7 @@ body.fade-out {
         position: relative;
     }
 
-    .nav-menu > li > a {
+    .nav-menu > li > a, .wanted-list {
         color: #000000;
         text-decoration: none;
         padding: 0px;
