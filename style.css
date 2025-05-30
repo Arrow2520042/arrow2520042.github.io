@@ -109,7 +109,7 @@ nav.header-link {
     width: 40px; 
     height: 40px;
     position: absolute;
-    left: 15px;
+    left: 10px;
     top: 2.5vh;
     display: flex;
     align-items: center;
@@ -1111,6 +1111,10 @@ body.fade-out {
     .nav-menu .sub-dropdown-content a:hover,
     .nav-menu .sub-sub-dropdown-content a:hover {
         background-color: #222;
+        color: #ffffff;
+    }
+
+    a.wanted-list:hover {
         color: #ffffff;
     }
     
