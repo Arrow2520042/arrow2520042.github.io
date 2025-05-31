@@ -1,15 +1,14 @@
 .footer, .header{
     background-color: #84d6bd;
-    min-width: 100%;
+    min-width: 100vw;
     text-align: center;
     display: flex;
     position: relative;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     justify-content: center;
-    padding: 0;
-    
 }
 
 .desktop-version {
@@ -246,6 +245,7 @@ body.fade-out {
     border-radius: 5px;
     transition: background-color 0.3s;
     text-decoration: none;
+    border: 1px solid #000000;
   }
   
   .download-button:hover {
@@ -1063,12 +1063,12 @@ body.fade-out {
 
     .nav-menu .dropdown-content {
         position: absolute;
-        background-color: #333;
+        background-color: #fff;
         border: 1px solid #333;
         display: none;
         padding: 0;
         list-style: none;
-        border: 1px solid #84d6bd;
+        border: 1px solid #000000;
     }
 
     .nav-menu .dropdown:hover > .dropdown-content {
@@ -1084,8 +1084,8 @@ body.fade-out {
         position: absolute;
         top: 0;
         left: 100%;
-        background-color: #333;
-        border: 1px solid #84d6bd;
+        background-color: #fff;
+        border: 1px solid #000000;
         min-width: 160px;
         z-index: 999;
         border-radius: 4px;
@@ -1104,14 +1104,13 @@ body.fade-out {
         display: block;
         padding: 10px 15px;
         text-decoration: none;
-        color: #84d6bd;
+        color: #000000;
     }
 
     .nav-menu .dropdown-content a:hover,
     .nav-menu .sub-dropdown-content a:hover,
     .nav-menu .sub-sub-dropdown-content a:hover {
         background-color: #222;
-        color: #ffffff;
     }
 
     a.wanted-list:hover {
@@ -1152,7 +1151,7 @@ body.fade-out {
         padding: 0;
         margin: 0 70px 0 30px;
         display: flex;
-        gap: 18px;
+        gap: 10px;
     }
 
     .nav-menu > li {
@@ -1162,8 +1161,9 @@ body.fade-out {
     .nav-menu > li > a, .wanted-list {
         color: #000000;
         text-decoration: none;
-        padding: 0px;
+        padding: 10px;
         display: inline-block;
+        border: 2px solid #000;
     }
 
     .nav-menu > li > a:hover {
@@ -1173,7 +1173,7 @@ body.fade-out {
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #333;
+        background-color: #ffffff;
         min-width: 220px;
         border-radius: 4px;
         top: 100%;
@@ -1201,7 +1201,7 @@ body.fade-out {
 
     .dropdown-content a:hover {
         background-color: #333;
-        color: #84d6bd;
+        color: #ffffff;
     }
 
     .dropdown:hover .dropdown-content {
@@ -1222,8 +1222,8 @@ body.fade-out {
         position: absolute;
         top: 0;
         left: 100%;
-        background-color: #333;
-        border: 1px solid #84d6bd;
+        background-color: #ffffff;
+        border: 1px solid #000000;
         min-width: 180px;
         z-index: 1000;
         border-radius: 4px;

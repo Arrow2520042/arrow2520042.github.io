@@ -1035,6 +1035,7 @@
         "Data.jpg",
         "Demi 4inch.JPG",
         "Demi prototype 4inch.jpg",
+        "Diskette KAO VF 2inch.jpg",
         "Diskette Maxell 2.5.jpg",
         "Drivetec.jpg",
         "dyskietka 2 cale.jpg",
@@ -1050,13 +1051,10 @@
         "HDVS SONY Disc.jpg",
         "Hitachi VX-F50 2inch.jpg",
         "HVD.jpg",
-        "KAO VF 2inch.jpg",
         "KARTA GRAFICZNA OLIVETTI M24 PC1050.jpg",
         "KAYPRO Robie.JPG",
         "Konica and Samurai 2inch Disk.jpg",
         "LaserDisc Lords of the crescent.jpg",
-        "M4120 photo.JPG",
-        "M4120.JPG",
         "MCD-1.jpg",
         "McDonnell.png",
         "Micro Floppy Disk Canon.png",
@@ -1073,9 +1071,6 @@
         "SyQuest 4.7GB.jpg",
         "Tabor or Dysan 3.25inch.JPG",
         "Tapestry InPhase.jpg",
-        "TDK micro D MC.jpg",
-        "TDK micro D.jpg",
-        "TDK micro DMC.jpg",
         "TEC 2inch.jpg",
         "Verbatim 5.25 minidisk tracks 1978  35tracks i 40 tracks.jpg",
         "VIR-D20 Disc 8inch 20cm.jpg"
@@ -1911,7 +1906,10 @@
         "792 SyQuest SyJet MAC Formatted YELLOW 3 3.jpg",
         "844 ORB 2.2GB CastleWood with SOFTWARW.jpg",
         "845 Iomega ZIP RED 1.jpg",
-        "845 Iomega ZIP RED 2.jpg"
+        "845 Iomega ZIP RED 2.jpg",
+        "900 Lilith M4120 CII Honywell Bull 1.jpg",
+        "900 Lilith M4120 CII Honywell Bull 2.jpg",
+        "900 Lilith M4120 CII Honywell Bull 3.jpg"
     ],
     "rdiscs-opticalMedia": [
         "139 PD650 a.jpg",
@@ -2058,6 +2056,7 @@
         "898 Commpact Cassette Sankey WITH HEAD CLEANING LEADER TAPE HR60 2.jpg",
         "898 Commpact Cassette Sankey WITH HEAD CLEANING LEADER TAPE HR60 3.jpg",
         "898 Commpact Cassette Sankey WITH HEAD CLEANING LEADER TAPE HR60 4.jpg",
+        "899 TDK MA-X 90.jpg",
         "TDK Endless EC12 tape 1.jpg",
         "TDK Endless EC12 tape 2.jpg",
         "TDK Head cleaner.jpg"
