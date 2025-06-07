@@ -112,7 +112,7 @@
         "109  5.25inch DS HD 1.6.JPG",
         "110  5.25inch DS HD 1.2.JPG",
         "111 5.25inch DS QD.JPG",
-        "112 5.25inch 2 i 2.JPG",
+        "112 Reversible 2S 2D 5.25inch.jpg",
         "113  5.25inch Twiggy Lisa FileWare 62.5TPI.JPG",
         "113a  5.25inch Twiggy Lisa FileWare.JPG",
         "406 HyperFlex 24MB  666TPI 5.25inch 1.jpg",
@@ -163,7 +163,9 @@
         "827 SS SD 1024 Izot 8inch.jpg",
         "856 3M CPT 6000-8000 8inch.jpg",
         "857 3M Micom 2000 8inch.jpg",
-        "863 Cleaning Disc 3M 8inch.jpg"
+        "863 Cleaning Disc 3M 8inch.jpg",
+        "903 Burroughs 8inch.jpg",
+        "917 WANG 8inch.jpg"
     ],
     "32sMedia": [
         "Bachem Ba 348 Bachem Fly 32.jpg",
@@ -302,6 +304,10 @@
         "886 The Victors 1.jpg",
         "886 The Victors 2.jpg",
         "891 Magnetic Ledger.jpg",
+        "908 Kalavox 1.jpg",
+        "908 Kalavox 2.jpg",
+        "908 Kalavox 3.jpg",
+        "916 Stroboscopic Card.jpg",
         "bez numeru dubel.jpg"
     ],
     "butterfliesMedia": [
@@ -466,6 +472,7 @@
         "TK 220 Neon 4.jpg"
     ],
     "lotsMedia": [
+        "2025-06-06 16.00.53.jpg",
         "2inch.jpg",
         "4Track A.jpg",
         "4Track B.jpg",
@@ -1222,7 +1229,11 @@
         "855 CD-I READY Philips 1.jpg",
         "855 CD-I READY Philips 2.jpg",
         "855 CD-I READY Philips 3.jpg",
-        "855 CD-I READY Philips 4.jpg"
+        "855 CD-I READY Philips 4.jpg",
+        "905 DualDisc DVD CD Other Combo RARE 1.jpg",
+        "905 DualDisc DVD CD Other Combo RARE 2.jpg",
+        "905 DualDisc DVD CD Other Combo RARE 3.jpg",
+        "905 DualDisc DVD CD Other Combo RARE 4.jpg"
     ],
     "discs-audio-otherMedia": [
         "331 Barbie 8.4 cm 1.jpg",
@@ -1525,7 +1536,14 @@
         "852 HD DVD-ROM Software 1.jpg",
         "852 HD DVD-ROM Software 2.jpg",
         "88 LDG Dragons Lair LaserDisc for arcade video game consoles 1.jpg",
-        "88 LDG Dragons Lair LaserDisc for arcade video game consoles 2.jpg"
+        "88 LDG Dragons Lair LaserDisc for arcade video game consoles 2.jpg",
+        "909 Laser Etched LaserDisk 12inch 1.jpg",
+        "909 Laser Etched LaserDisk 12inch 2.jpg",
+        "909 Laser Etched LaserDisk 12inch 3.jpg",
+        "911 Netflix Movie 1.jpg",
+        "911 Netflix Movie 2.jpg",
+        "912 Netflix streaming for PS3.jpg",
+        "913 Netflix streaming for Wii.jpg"
     ],
     "discs-data-vinylsMedia": [
         "198 Floppy-ROM 1978 soft for DOS 1.jpg",
@@ -1909,7 +1927,8 @@
         "845 Iomega ZIP RED 2.jpg",
         "900 Lilith M4120 CII Honywell Bull 1.jpg",
         "900 Lilith M4120 CII Honywell Bull 2.jpg",
-        "900 Lilith M4120 CII Honywell Bull 3.jpg"
+        "900 Lilith M4120 CII Honywell Bull 3.jpg",
+        "900 Lilith M4120 CII Honywell Bull 4.jpg"
     ],
     "rdiscs-opticalMedia": [
         "139 PD650 a.jpg",
@@ -1997,7 +2016,8 @@
         "756 3M Optimem 12inch 1.jpg",
         "756 3M Optimem 12inch 2.jpg",
         "756 3M Optimem 12inch 3.jpg",
-        "756 3M Optimem 12inch 4.jpg"
+        "756 3M Optimem 12inch 4.jpg",
+        "910 Maxell OC321 7GB.jpg"
     ],
     "tapescassettes-audio-compactMedia": [
         "241 SONY CC POST a.jpg",
@@ -2056,12 +2076,14 @@
         "898 Commpact Cassette Sankey WITH HEAD CLEANING LEADER TAPE HR60 2.jpg",
         "898 Commpact Cassette Sankey WITH HEAD CLEANING LEADER TAPE HR60 3.jpg",
         "898 Commpact Cassette Sankey WITH HEAD CLEANING LEADER TAPE HR60 4.jpg",
+        "899 TDK MA-X 90 Compact Cassette.jpg",
         "899 TDK MA-X 90.jpg",
         "TDK Endless EC12 tape 1.jpg",
         "TDK Endless EC12 tape 2.jpg",
         "TDK Head cleaner.jpg"
     ],
     "tapescassettes-audio-smallMedia": [
+        "1A Mini Micro UltraMini.jpg",
         "315 Ultra MiniCassette 20min 44mm x 28mm.jpg",
         "315 Ultra MiniCassette 44mm x 28mm.jpg",
         "538 PicoCassette 36mm x 25mma.jpg",
@@ -2070,14 +2092,17 @@
         "541 Mini Sankyo M-Cassette 60min 54mm x 34mm.jpg",
         "542 Micro Cassette 60min 50mm x 33mm.jpg",
         "543 HP 82176A mini data cassette for the 82161A 56mm x 34mm.jpg",
-        "544 Grundig Steno Cassette 30min 65mm x 45mm.jpg",
+        "544 Grundig Steno Cassette Gray 30min 65mm x 45mm.jpg",
         "835 Micro Cassette 60min SONY.jpg",
+        "Grundig Steno Cassette Blue 30min 65mm x 45mm.jpg",
+        "Grundig Steno Cassette Brown 30min 65mm x 45mm.jpg",
+        "Grundig Steno Cassette Red 30min 65mm x 45mm.jpg",
         "Micro Cassette 10min Panasonic.jpg",
         "Micro cassette 15min Olympus.jpg",
         "Micro Cassette 20min Maxell.jpg",
         "Micro Cassette 40min TDK 3.jpg",
         "Micro Cassette 45min Maxell.jpg",
-        "Micro Cassette 45min no name.jpg",
+        "Micro Cassette 45min SoundTech.jpg",
         "Micro Cassette 5min Panasonic.jpg",
         "Micro Cassette 60min Panasonic.jpg",
         "Micro Cassette 80min SONY.jpg",
@@ -2380,6 +2405,13 @@
         "893 Tri-Data CartriFile 25.jpg",
         "894 Tri-Data CartriFile 50 a.jpg",
         "894 Tri-Data CartriFile 50.jpg",
+        "901 2-XL Tiger Interactive Compact Cassette  1.jpg",
+        "901 2-XL Tiger Interactive Compact Cassette 2.jpg",
+        "906 IBM 3850 customer engineer test.jpg",
+        "907 IBM 3850 system engineer test.jpg",
+        "914 OMNI Entertainment 8Track 1.jpg",
+        "914 OMNI Entertainment 8Track 2.jpg",
+        "914 OMNI Entertainment 8Track 3.jpg",
         "TDK PC15 Computer tape 1.jpg",
         "TDK PC15 Computer tape 2.jpg"
     ],
@@ -2623,7 +2655,7 @@
         "261 ADAT Foil 2.jpg",
         "261 ADAT.jpg",
         "270 RCA black recorded 1.jpg",
-        "270 RCA black recorded.jpg",
+        "270 RCA black recorded 2.jpg",
         "271 ONLY foto.jpg",
         "271 SABAmobil 2.jpg",
         "271 SABAmobil.jpg",
@@ -2806,7 +2838,14 @@
         "878 Paper tape 1.jpg",
         "878 Paper tape 2.jpg",
         "881 Reel to Reel R2R Cleaning Tape a.jpg",
-        "881 Reel to Reel R2R Cleaning Tape b.jpg"
+        "881 Reel to Reel R2R Cleaning Tape b.jpg",
+        "902 Aristocart 1.jpg",
+        "902 Aristocart 2.jpg",
+        "904 Cousino Tape 1.jpg",
+        "904 Cousino Tape 2.jpg",
+        "904 Cousino Tape 3.jpg",
+        "915 Phase 4 Stereo R2R.jpg",
+        "918 8Track Calibration Tape VTT-801 Test Tape.jpg"
     ],
     "discs-data-opticalrecordableMedia": [
         "10 RLV Recordable LaserDisc 1.jpg",

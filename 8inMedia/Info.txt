@@ -1,0 +1,5 @@
+My 8" floppy disks :
+Hard Sectors    : Minnow, Wang, Vydec
+Hard Sectors 32 : SS SD, DS DD, Burroughs
+Soft sectors    : SS SD, SS DD, DS SD 
+Soft sectors    : 256D, 256HD, 1024D.
