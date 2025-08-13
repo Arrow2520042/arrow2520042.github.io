@@ -52,18 +52,23 @@ document.addEventListener('DOMContentLoaded', function() {
         overlay.appendChild(img);
         document.body.appendChild(overlay);
 
+        let scale = 1;
+        let translateX = 0;
+        let translateY = 0; 
+
         requestAnimationFrame(() => {
-            overlay.style.opacity = 1;
-            img.style.transform = 'scale(1)';
+        overlay.style.opacity = 1;
+        img.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
         });
 
         function closeOverlay() {
-            overlay.style.opacity = 0;
-            img.style.transform = 'scale(0.8)';
-            setTimeout(() => {
-                document.body.removeChild(overlay);
-                document.removeEventListener('keydown', keyHandler);
-            }, 300);
+        overlay.style.opacity = 0;
+        img.style.transform = `scale(0.8) translate(0, 0)`;
+        setTimeout(() => {
+            document.body.removeChild(overlay);
+            document.removeEventListener('keydown', keyHandler);
+            overlay.removeEventListener('wheel', zoomHandler);
+        }, 300);
         }
 
         function keyHandler(e) {
@@ -78,7 +83,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        function zoomHandler(e) {
+        e.preventDefault();
+        const rect = img.getBoundingClientRect();
+        const cursorX = e.clientX - rect.left; 
+        const cursorY = e.clientY - rect.top;  
+        const offsetX = (cursorX / rect.width - 0.5) * 1.5; 
+        const offsetY = (cursorY / rect.height - 0.5) * 1.5; 
+
+        if (e.deltaY < 0) {
+            scale = Math.min(scale + 0.1, 3); 
+            translateX -= offsetX * 15 * (scale - 1); 
+            translateY -= offsetY * 15 * (scale - 1); 
+        } else {
+            scale = Math.max(scale - 0.1, 0.9); 
+            if (scale === 0.9) {
+                translateX = 0;
+                translateY = 0;
+            }
+        }
+
+    img.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+}
+    
+
         document.addEventListener('keydown', keyHandler);
+        overlay.addEventListener('wheel', zoomHandler);
 
         overlay.addEventListener('click', function() {
             closeOverlay();
