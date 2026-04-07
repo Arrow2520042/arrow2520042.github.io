@@ -143,6 +143,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 //Nowa wersja .json loading + lazy loading
 document.addEventListener('DOMContentLoaded', function() {
+    const planeModelFolders = new Set([
+        '32sMedia',
+        '35sMedia',
+        '48sMedia',
+        '72sMedia',
+        '87sMedia'
+    ]);
+
     const folderToPageMapping = {
         "2inMedia": "/page1subpages/page1-1.html",
         "2.5inMedia": "/page1subpages/page1-2.html",
@@ -215,10 +223,45 @@ document.addEventListener('DOMContentLoaded', function() {
         return null;
     }
 
+    function getMediaFolderPath(folderKey) {
+        if (!folderKey || !folderKey.endsWith('Media')) {
+            return null;
+        }
+
+        const baseName = folderKey.slice(0, -5);
+        const parts = baseName.split('-');
+        const rootRenames = {
+            discs: '2discs',
+            rdiscs: '3rdiscs',
+            tapescassettes: '4tapescassettes',
+            other: '5other'
+        };
+
+        if (/^\d+(\.\d+)?in$/.test(baseName)) {
+            return `WebMedia/1diskettes/${baseName}`;
+        }
+
+        if (planeModelFolders.has(folderKey)) {
+            return `WebMedia/planes/${baseName}`;
+        }
+
+        if (rootRenames[parts[0]]) {
+            parts[0] = rootRenames[parts[0]];
+        }
+
+        return `WebMedia/${parts.join('/')}`;
+    }
+
     function generateElementsFromJSON(jsonData) {
         const currentFolder = getCurrentFolder();
         if (!currentFolder || !jsonData[currentFolder]) {
             console.log('No matching folder found for this page');
+            return;
+        }
+
+        const mediaFolderPath = getMediaFolderPath(currentFolder);
+        if (!mediaFolderPath) {
+            console.error('Could not resolve media folder path for this page');
             return;
         }
 
@@ -234,12 +277,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const fileNameWithoutExt = removeExtension(filename);
             const className = createSafeClassName(filename);
+            const encodedFilename = filename.replace(/ /g, '%20');
 
             const link = document.createElement('a');
-            link.href = `../${currentFolder}/${filename.replace(/ /g, '%20')}`;
+            link.href = `../${mediaFolderPath}/${encodedFilename}`;
             link.className = `blockZ ${className}`;
 
-            link.setAttribute('data-bg', `../${currentFolder}/${filename.replace(/ /g, '%20')}`);
+            link.setAttribute('data-bg', `../${mediaFolderPath}/${encodedFilename}`);
 
             const caption = document.createElement('span');
             caption.className = 'block-caption';
