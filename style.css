@@ -1368,11 +1368,16 @@ body.fade-out {
         position: relative;
     }
 
-    .nav-menu > li > a, .wanted-list {
+    .nav-menu > li > a,
+    .wanted-list,
+    .header-action-button {
         color: #000000;
         text-decoration: none;
-        padding: 8.4px 10.5px;
-        display: inline-block;
+        padding: 0 10.5px;
+        height: 50px;
+        display: inline-flex;
+        align-items: center;
+        box-sizing: border-box;
         border: 2px solid #000;
         white-space: nowrap;
         font-size: clamp(13.7px, 0.95vw, 18.9px);
@@ -1699,7 +1704,7 @@ body.fade-out {
 
     .header-action-button {
         min-width: 64px;
-        height: 24px;
+        height: 26px;
         font-size: 12px;
         border-radius: 6px;
         padding: 0 8px;

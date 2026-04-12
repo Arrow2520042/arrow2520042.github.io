@@ -1,10 +1,10 @@
 const SHARED_NAV_MENU_TEMPLATE = `
-<li><a href="/subpages/historie.html" class="wanted-list header-shortcut info-shortcut">Interesting context stories</a></li>
+<li><a href="/subpages/historie.html" class="wanted-list header-shortcut info-shortcut">Interesting Context Stories</a></li>
 <li class="dropdown">
-    <a href="#">Data Storage Media ▾</a>
+    <a href="/subpages/page1.html">Data Storage Media ▾</a>
     <ul class="dropdown-content">
         <li class="sub-dropdown">
-            <a href="#">Diskettes ▸</a>
+            <a href="/subpages/page1.html">Diskettes ▸</a>
             <ul class="sub-dropdown-content">
                 <li><a href="/page1subpages/page1-1.html">2 inches</a></li>
                 <li><a href="/page1subpages/page1-2.html">2.5 inches</a></li>
@@ -18,10 +18,10 @@ const SHARED_NAV_MENU_TEMPLATE = `
             </ul>
         </li>
         <li class="sub-dropdown">
-            <a href="#">Discs ▸</a>
+            <a href="/subpages/page2.html">Discs ▸</a>
             <ul class="sub-dropdown-content">
                 <li class="sub-sub-dropdown">
-                    <a href="#">Audio ▸</a>
+                    <a href="/page2subpages/page2-1.html">Audio ▸</a>
                     <ul class="sub-sub-dropdown-content">
                         <li><a href="/page2-1subpages/page2-1-1.html">Magnetic</a></li>
                         <li><a href="/page2-1subpages/page2-1-2.html">Optical</a></li>
@@ -31,7 +31,7 @@ const SHARED_NAV_MENU_TEMPLATE = `
                     </ul>
                 </li>
                 <li class="sub-sub-dropdown">
-                    <a href="#">Data & Game & Photo & Video ▸</a>
+                    <a href="/page2subpages/page2-2.html">Data & Game & Photo & Video ▸</a>
                     <ul class="sub-sub-dropdown-content">
                         <li><a href="/page2-2subpages/page2-2-1.html">Optical</a></li>
                         <li><a href="/page2-2subpages/page2-2-3.html">Optical Recordable</a></li>
@@ -39,7 +39,7 @@ const SHARED_NAV_MENU_TEMPLATE = `
                     </ul>
                 </li>
                 <li class="sub-sub-dropdown">
-                    <a href="#">Video ▸</a>
+                    <a href="/page2subpages/page2-3.html">Video ▸</a>
                     <ul class="sub-sub-dropdown-content">
                         <li><a href="/page2-3subpages/page2-3-1.html">Magnetic</a></li>
                         <li><a href="/page2-3subpages/page2-3-2.html">Optical</a></li>
@@ -50,17 +50,17 @@ const SHARED_NAV_MENU_TEMPLATE = `
             </ul>
         </li>
         <li class="sub-dropdown">
-            <a href="#">Removable Discs ▸</a>
+            <a href="/subpages/page3.html">Removable Discs ▸</a>
             <ul class="sub-dropdown-content">
                 <li><a href="/page3subpages/page3-1.html">Magnetic</a></li>
                 <li><a href="/page3subpages/page3-2.html">Optical</a></li>
             </ul>
         </li>
         <li class="sub-dropdown">
-            <a href="#">Tapes & Cassettes ▸</a>
+            <a href="/subpages/page4.html">Tapes & Cassettes ▸</a>
             <ul class="sub-dropdown-content">
                 <li class="sub-sub-dropdown">
-                    <a href="#">Audio ▸</a>
+                    <a href="/page4subpages/page4-1.html">Audio ▸</a>
                     <ul class="sub-sub-dropdown-content">
                         <li><a href="/page4-1subpages/page4-1-1.html">Compact Cassettes</a></li>
                         <li><a href="/page4-1subpages/page4-1-2.html">Small Cassettes</a></li>
@@ -78,7 +78,7 @@ const SHARED_NAV_MENU_TEMPLATE = `
     </ul>
 </li>
 <li class="dropdown">
-    <a href="#">Other Collectables ▾</a>
+    <a href="/subpages/page6.html">Other Collectables ▾</a>
     <ul class="dropdown-content">
         <li><a href="/subpages/page6.html">Butterflies</a></li>
         <li><a href="/subpages/page7.html">CPUs</a></li>
@@ -615,6 +615,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const link = e.target.closest(".dropdown > a, .sub-dropdown > a, .sub-sub-dropdown > a");
         if (!link) {
+            return;
+        }
+
+        const href = (link.getAttribute("href") || "").trim();
+        if (href && href !== "#") {
             return;
         }
 
