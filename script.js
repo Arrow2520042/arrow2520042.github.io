@@ -1,3 +1,144 @@
+const SHARED_NAV_MENU_TEMPLATE = `
+<li><a href="/subpages/historie.html" class="wanted-list header-shortcut info-shortcut">Interesting context stories</a></li>
+<li class="dropdown">
+    <a href="#">Data Storage Media ▾</a>
+    <ul class="dropdown-content">
+        <li class="sub-dropdown">
+            <a href="#">Diskettes ▸</a>
+            <ul class="sub-dropdown-content">
+                <li><a href="/page1subpages/page1-1.html">2 inches</a></li>
+                <li><a href="/page1subpages/page1-2.html">2.5 inches</a></li>
+                <li><a href="/page1subpages/page1-3.html">2.6 inches</a></li>
+                <li><a href="/page1subpages/page1-4.html">2.8 inches</a></li>
+                <li><a href="/page1subpages/page1-5.html">3 inches</a></li>
+                <li><a href="/page1subpages/page1-6.html">3.5 inches</a></li>
+                <li><a href="/page1subpages/page1-7.html">3.94 inches</a></li>
+                <li><a href="/page1subpages/page1-8.html">5.25 inches</a></li>
+                <li><a href="/page1subpages/page1-9.html">8 inches</a></li>
+            </ul>
+        </li>
+        <li class="sub-dropdown">
+            <a href="#">Discs ▸</a>
+            <ul class="sub-dropdown-content">
+                <li class="sub-sub-dropdown">
+                    <a href="#">Audio ▸</a>
+                    <ul class="sub-sub-dropdown-content">
+                        <li><a href="/page2-1subpages/page2-1-1.html">Magnetic</a></li>
+                        <li><a href="/page2-1subpages/page2-1-2.html">Optical</a></li>
+                        <li><a href="/page2-1subpages/page2-1-5.html">Optical Recordable</a></li>
+                        <li><a href="/page2-1subpages/page2-1-3.html">Other Audio</a></li>
+                        <li><a href="/page2-1subpages/page2-1-4.html">Vinyls</a></li>
+                    </ul>
+                </li>
+                <li class="sub-sub-dropdown">
+                    <a href="#">Data & Game & Photo & Video ▸</a>
+                    <ul class="sub-sub-dropdown-content">
+                        <li><a href="/page2-2subpages/page2-2-1.html">Optical</a></li>
+                        <li><a href="/page2-2subpages/page2-2-3.html">Optical Recordable</a></li>
+                        <li><a href="/page2-2subpages/page2-2-2.html">Vinyls</a></li>
+                    </ul>
+                </li>
+                <li class="sub-sub-dropdown">
+                    <a href="#">Video ▸</a>
+                    <ul class="sub-sub-dropdown-content">
+                        <li><a href="/page2-3subpages/page2-3-1.html">Magnetic</a></li>
+                        <li><a href="/page2-3subpages/page2-3-2.html">Optical</a></li>
+                        <li><a href="/page2-3subpages/page2-3-3.html">Vinyls</a></li>
+                    </ul>
+                </li>
+                <li><a href="/page2subpages/page2-4.html">Photo</a></li>
+            </ul>
+        </li>
+        <li class="sub-dropdown">
+            <a href="#">Removable Discs ▸</a>
+            <ul class="sub-dropdown-content">
+                <li><a href="/page3subpages/page3-1.html">Magnetic</a></li>
+                <li><a href="/page3subpages/page3-2.html">Optical</a></li>
+            </ul>
+        </li>
+        <li class="sub-dropdown">
+            <a href="#">Tapes & Cassettes ▸</a>
+            <ul class="sub-dropdown-content">
+                <li class="sub-sub-dropdown">
+                    <a href="#">Audio ▸</a>
+                    <ul class="sub-sub-dropdown-content">
+                        <li><a href="/page4-1subpages/page4-1-1.html">Compact Cassettes</a></li>
+                        <li><a href="/page4-1subpages/page4-1-2.html">Small Cassettes</a></li>
+                        <li><a href="/page4-1subpages/page4-1-3.html">Other</a></li>
+                    </ul>
+                </li>
+                <li><a href="/page4subpages/page4-2.html">Data</a></li>
+                <li><a href="/page4subpages/page4-3.html">Video</a></li>
+            </ul>
+        </li>
+        <li><a href="/subpages/page5.html">Other Media</a></li>
+        <li><a href="/subpages/page10.html">Lots</a></li>
+        <li><a href="/subpages/page15.html">Santana Abraxas CDs</a></li>
+        <li><a href="/subpages/page18.html">TDK D</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#">Other Collectables ▾</a>
+    <ul class="dropdown-content">
+        <li><a href="/subpages/page6.html">Butterflies</a></li>
+        <li><a href="/subpages/page7.html">CPUs</a></li>
+        <li><a href="/subpages/page8.html">HDDs</a></li>
+        <li><a href="/subpages/page9.html">Light Bublbs</a></li>
+        <li><a href="/subpages/page11.html">Minerals</a></li>
+        <li><a href="/subpages/page12.html">PC Cards</a></li>
+        <li class="sub-dropdown">
+            <a href="#">Airplane Models ▸</a>
+            <ul class="sub-dropdown-content">
+                <li><a href="/page13subpages/page13-1.html">32 scale</a></li>
+                <li><a href="/page13subpages/page13-2.html">35 scale</a></li>
+                <li><a href="/page13subpages/page13-3.html">48 scale</a></li>
+                <li><a href="/page13subpages/page13-4.html">72 scale</a></li>
+                <li><a href="/page13subpages/page13-5.html">87 scale</a></li>
+            </ul>
+        </li>
+        <li><a href="/subpages/page14.html">Porcelain Cups</a></li>
+        <li><a href="/subpages/page16.html">Stamps</a></li>
+        <li><a href="/subpages/page17.html">Stickers</a></li>
+        <li><a href="/subpages/page19.html">Train Bahns H0</a></li>
+    </ul>
+</li>
+<li><a href="/subpages/page20.html" class="wanted-list header-shortcut">Wanted</a></li>
+`;
+
+const NAV_MENU_DESKTOP_BREAKPOINT = 1300;
+
+const SHARED_HEADER_ACTIONS = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navMenu = document.querySelector(".nav-menu");
+    if (navMenu) {
+        navMenu.innerHTML = SHARED_NAV_MENU_TEMPLATE;
+    }
+
+    if (!SHARED_HEADER_ACTIONS.length) {
+        return;
+    }
+
+    const header = document.querySelector(".header");
+    const hamburger = document.querySelector(".hamburger");
+    if (!header || !hamburger) {
+        return;
+    }
+
+    const actions = document.createElement("div");
+    actions.className = "header-actions";
+
+    SHARED_HEADER_ACTIONS.forEach((action) => {
+        const button = document.createElement("a");
+        button.className = "header-action-button";
+        button.href = action.href;
+        button.textContent = action.label;
+        actions.appendChild(button);
+    });
+
+    header.insertBefore(actions, hamburger);
+});
+
 //Obsluga fade-in fade-out
 document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("fade-out");
@@ -131,6 +272,10 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener("DOMContentLoaded", () => {
     const headerButton = document.querySelector(".header-button");
 
+    if (!headerButton) {
+        return;
+    }
+
     document.addEventListener("keydown", (event) => {
         if (event.key === "Backspace") {
             event.preventDefault();
@@ -223,26 +368,73 @@ document.addEventListener('DOMContentLoaded', function() {
         return null;
     }
 
+    function getFolderKeyCandidates(folderKey) {
+        if (!folderKey || !folderKey.endsWith('Media')) {
+            return [];
+        }
+
+        const baseName = folderKey.slice(0, -5);
+        const candidates = [folderKey];
+
+        const disketteWithSpace = baseName.replace(/^(\d+(?:\.\d+)?)in$/i, '$1 inch');
+        if (disketteWithSpace !== baseName) {
+            candidates.push(`${disketteWithSpace}Media`);
+        }
+
+        if (baseName.startsWith('discs-')) {
+            candidates.push(`2 Discs-${baseName.slice('discs-'.length)}Media`);
+        }
+
+        if (baseName.startsWith('tapescassettes-audio-')) {
+            candidates.push(`tapescassettes-${baseName.slice('tapescassettes-audio-'.length)}Media`);
+        }
+
+        return [...new Set(candidates)];
+    }
+
+    function resolveFolderKeyForJson(jsonData, folderKey) {
+        const candidates = getFolderKeyCandidates(folderKey);
+        for (const candidate of candidates) {
+            if (Object.prototype.hasOwnProperty.call(jsonData, candidate)) {
+                return candidate;
+            }
+        }
+        return null;
+    }
+
     function getMediaFolderPath(folderKey) {
         if (!folderKey || !folderKey.endsWith('Media')) {
             return null;
         }
 
         const baseName = folderKey.slice(0, -5);
-        const parts = baseName.split('-');
+        const disketteMatch = baseName.match(/^(\d+(?:\.\d+)?)\s*(?:in|inch)$/i);
+        if (disketteMatch) {
+            return `WebMedia/1diskettes/${disketteMatch[1]} inch`;
+        }
+
+        if (planeModelFolders.has(folderKey)) {
+            return `WebMedia/planes/${baseName}`;
+        }
+
+        const normalizedBaseName = baseName
+            .replace(/^2\s*discs-/i, 'discs-')
+            .replace(/^2discs-/i, 'discs-');
+
+        const parts = normalizedBaseName.split('-');
         const rootRenames = {
-            discs: '2discs',
+            discs: '2 Discs',
             rdiscs: '3rdiscs',
             tapescassettes: '4tapescassettes',
             other: '5other'
         };
 
-        if (/^\d+(\.\d+)?in$/.test(baseName)) {
-            return `WebMedia/1diskettes/${baseName}`;
-        }
-
-        if (planeModelFolders.has(folderKey)) {
-            return `WebMedia/planes/${baseName}`;
+        if (
+            parts[0] === 'tapescassettes' &&
+            parts[1] === 'audio' &&
+            ['compact', 'small', 'other'].includes(parts[2])
+        ) {
+            parts.splice(1, 1);
         }
 
         if (rootRenames[parts[0]]) {
@@ -254,12 +446,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function generateElementsFromJSON(jsonData) {
         const currentFolder = getCurrentFolder();
-        if (!currentFolder || !jsonData[currentFolder]) {
+        if (!currentFolder) {
             console.log('No matching folder found for this page');
             return;
         }
 
-        const mediaFolderPath = getMediaFolderPath(currentFolder);
+        const resolvedFolderKey = resolveFolderKeyForJson(jsonData, currentFolder);
+        if (!resolvedFolderKey) {
+            console.log('No matching JSON key found for this page');
+            return;
+        }
+
+        const mediaFolderPath = getMediaFolderPath(resolvedFolderKey);
         if (!mediaFolderPath) {
             console.error('Could not resolve media folder path for this page');
             return;
@@ -271,7 +469,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        jsonData[currentFolder].forEach(filename => {
+        jsonData[resolvedFolderKey].forEach(filename => {
             const blockWrapper = document.createElement('div');
             blockWrapper.className = 'block-wrapper';
 
@@ -351,6 +549,45 @@ document.querySelector('.scroll-down').addEventListener('click', function(e) {
       behavior: 'smooth'
     });
   });
+
+const scrollUpButton = document.querySelector('.scroll-up');
+const scrollDownButton = document.querySelector('.scroll-down');
+const headerElement = document.querySelector('.header, header');
+const footerElement = document.querySelector('footer.footer, .footer, footer');
+
+function keepScrollUpAboveFooter() {
+        if (!scrollUpButton || !footerElement) {
+                return;
+        }
+
+        if (!scrollUpButton.dataset.baseBottomPx) {
+                const computedBottom = parseFloat(window.getComputedStyle(scrollUpButton).bottom);
+                scrollUpButton.dataset.baseBottomPx = String(Number.isFinite(computedBottom) ? computedBottom : 16);
+        }
+
+        const baseBottomPx = parseFloat(scrollUpButton.dataset.baseBottomPx) || 16;
+        const footerRect = footerElement.getBoundingClientRect();
+        const footerVisibleFromBottomPx = Math.max(0, window.innerHeight - footerRect.top);
+
+        let mirroredGapPx = 8;
+        if (scrollDownButton && headerElement) {
+            const downTopPx = parseFloat(window.getComputedStyle(scrollDownButton).top);
+            const headerHeightPx = headerElement.getBoundingClientRect().height;
+            if (Number.isFinite(downTopPx) && Number.isFinite(headerHeightPx)) {
+                mirroredGapPx = Math.max(0, downTopPx - headerHeightPx);
+            }
+        }
+
+        const requiredBottomPx = Math.max(baseBottomPx, footerVisibleFromBottomPx + mirroredGapPx);
+
+        scrollUpButton.style.setProperty('bottom', `${requiredBottomPx}px`, 'important');
+}
+
+window.addEventListener('scroll', keepScrollUpAboveFooter, { passive: true });
+window.addEventListener('resize', keepScrollUpAboveFooter);
+window.addEventListener('load', keepScrollUpAboveFooter);
+keepScrollUpAboveFooter();
+
 //Anomacja przyciskow scroll
   document.querySelectorAll('.scroll-up, .scroll-down').forEach(btn => {
     btn.addEventListener('click', function() {
@@ -363,38 +600,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
 
+    if (!hamburger || !navMenu) {
+        return;
+    }
+
     hamburger.addEventListener("click", function () {
         navMenu.classList.toggle("active");
     });
 
-    document.querySelectorAll(".dropdown > a").forEach(link => {
-        link.addEventListener("click", function (e) {
-            if (window.innerWidth < 1300) {
-                e.preventDefault();
-                const parent = this.parentElement;
-                parent.classList.toggle("open");
-            }
-        });
-    });
+    navMenu.addEventListener("click", function (e) {
+        if (window.innerWidth >= NAV_MENU_DESKTOP_BREAKPOINT) {
+            return;
+        }
 
-    document.querySelectorAll(".sub-dropdown > a").forEach(link => {
-        link.addEventListener("click", function (e) {
-            if (window.innerWidth < 1300) {
-                e.preventDefault();
-                const parent = this.parentElement;
-                parent.classList.toggle("open");
-            }
-        });
-    });
+        const link = e.target.closest(".dropdown > a, .sub-dropdown > a, .sub-sub-dropdown > a");
+        if (!link) {
+            return;
+        }
 
-    document.querySelectorAll(".sub-sub-dropdown > a").forEach(link => {
-        link.addEventListener("click", function (e) {
-            if (window.innerWidth < 1300) {
-                e.preventDefault();
-                const parent = this.parentElement;
-                parent.classList.toggle("open");
-            }
-        });
+        e.preventDefault();
+        const parent = link.parentElement;
+        if (parent) {
+            parent.classList.toggle("open");
+        }
     });
 });
 //mobile and desktop header version
