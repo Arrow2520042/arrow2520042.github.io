@@ -1,5 +1,5 @@
 const SHARED_NAV_MENU_TEMPLATE = `
-<li><a href="/subpages/historie.html" class="wanted-list header-shortcut info-shortcut">Interesting Context Stories</a></li>
+<li><a href="/subpages/historie.html" class="wanted-list header-shortcut info-shortcut">Thank you page!</a></li>
 <li class="dropdown">
     <a href="/subpages/page1.html">Data Storage Media ▾</a>
     <ul class="dropdown-content">
@@ -554,6 +554,25 @@ const scrollUpButton = document.querySelector('.scroll-up');
 const scrollDownButton = document.querySelector('.scroll-down');
 const headerElement = document.querySelector('.header, header');
 const footerElement = document.querySelector('footer.footer, .footer, footer');
+const SCROLL_EDGE_GAP_PX = 8;
+
+function keepScrollDownBelowHeader() {
+    if (!scrollDownButton || !headerElement) {
+        return;
+    }
+
+    if (!scrollDownButton.dataset.baseTopPx) {
+        const computedTop = parseFloat(window.getComputedStyle(scrollDownButton).top);
+        scrollDownButton.dataset.baseTopPx = String(Number.isFinite(computedTop) ? computedTop : 16);
+    }
+
+    const baseTopPx = parseFloat(scrollDownButton.dataset.baseTopPx) || 16;
+    const headerRect = headerElement.getBoundingClientRect();
+    const headerVisibleBottomPx = Math.max(0, headerRect.bottom);
+    const requiredTopPx = Math.max(baseTopPx, headerVisibleBottomPx + SCROLL_EDGE_GAP_PX);
+
+    scrollDownButton.style.setProperty('top', `${requiredTopPx}px`, 'important');
+}
 
 function keepScrollUpAboveFooter() {
         if (!scrollUpButton || !footerElement) {
@@ -569,19 +588,15 @@ function keepScrollUpAboveFooter() {
         const footerRect = footerElement.getBoundingClientRect();
         const footerVisibleFromBottomPx = Math.max(0, window.innerHeight - footerRect.top);
 
-        let mirroredGapPx = 8;
-        if (scrollDownButton && headerElement) {
-            const downTopPx = parseFloat(window.getComputedStyle(scrollDownButton).top);
-            const headerHeightPx = headerElement.getBoundingClientRect().height;
-            if (Number.isFinite(downTopPx) && Number.isFinite(headerHeightPx)) {
-                mirroredGapPx = Math.max(0, downTopPx - headerHeightPx);
-            }
-        }
-
-        const requiredBottomPx = Math.max(baseBottomPx, footerVisibleFromBottomPx + mirroredGapPx);
+        const requiredBottomPx = Math.max(baseBottomPx, footerVisibleFromBottomPx + SCROLL_EDGE_GAP_PX);
 
         scrollUpButton.style.setProperty('bottom', `${requiredBottomPx}px`, 'important');
 }
+
+window.addEventListener('scroll', keepScrollDownBelowHeader, { passive: true });
+window.addEventListener('resize', keepScrollDownBelowHeader);
+window.addEventListener('load', keepScrollDownBelowHeader);
+keepScrollDownBelowHeader();
 
 window.addEventListener('scroll', keepScrollUpAboveFooter, { passive: true });
 window.addEventListener('resize', keepScrollUpAboveFooter);
