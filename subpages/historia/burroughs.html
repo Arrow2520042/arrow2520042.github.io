@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js" defer></script>
+    <meta name="description" content="Burroughs B80/B90 memories from field engineer Steve Lukaczyk, with rare diskette details and service insights from the late 1970s and early 1980s.">
+    <meta name="keywords" content="Burroughs B80, Burroughs B90, Steve Lukaczyk, floppy diskette, computing history, data storage history">
+    <meta name="author" content="Arrow2520042, Grzegorz Karta">
+    <link rel="icon" type="image/png" href="../../grafiki/ico.png">
+    <title>Burroughs B80/B90: Memories from the Field</title>
+    <link rel="canonical" href="https://tapesandcassettes.com/subpages/historia/burroughs.html">
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="header-button" data-url="../historie.html"></nav>
+        <div class="header-brand-section desktop-version">
+            <img src="../../grafiki/icox64.png" class="header-logo" width="64" height="64" alt="Tapes and Cassettes logo">
+            <div class="header-text-content">
+                <nav class="header-link" data-url="../../index.html">Tapes & Cassettes</nav>
+                <p class="gallery-desc">A visual collection of obsolete and rare data storage media formats.</p>
+            </div>
+        </div>
+        <img src="../../grafiki/icox64.png" class="header-logo-mobile" width="64" height="64" alt="Tapes and Cassettes logo">
+        <div class="mobile-version">
+            <div class="header-text-content">
+                <nav class="header-link" data-url="../../index.html">Tapes & Cassettes</nav>
+                <p class="gallery-desc">A visual collection of obsolete and rare data storage media formats.</p>
+            </div>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+        <nav class="main-nav">
+            <div class="centered-nav-wrapper">
+                <ul class="nav-menu"></ul>
+            </div>
+        </nav>
+        <nav class="scroll-down"></nav>
+    </header>
+
+    <main class="container info-container">
+        <section class="info-card william-story-card">
+            <h1>Burroughs B80/B90: Memories from the Field</h1>
+            <div class="william-story-content">
+                <p>
+                    Preserving the history of computing is not just about collecting hardware; it is about saving the stories of the people who built, maintained, and lived through the era of early innovation. Recently, I had the pleasure of connecting with Steve Lukaczyk, a former field engineer who worked with Burroughs systems.
+Steve was kind enough to share a specimen of a specialized diskette for my collection and, more importantly, he shared a fascinating glimpse into the daily challenges of a field engineer in the late 70s and early 80s. Below is a firsthand account of the unique engineering behind the Burroughs B80/B90 series and the "hidden" causes of data loss that only those on the front lines could discover.
+</p>
+<h2>The Story by Steve Lukaczyk</h2>
+<p>
+"Regarding the technical information on these disks—as someone on your Facebook post mentioned, they were fairly reliable. However, the only problems I remember were that the hub was easy to damage if the diskette was inserted improperly. There were no reinforcement rings to strengthen it, as seen with some other types. They came with a clear plastic cover with a blue handle; the operator would insert the whole thing into the drive and it would release the diskette. Removal was the reverse—you had to use the cover to get it out.
+These came pre-initialized from the factory. Because they were so 'dense,' the servo data was written to them during manufacture and, just like a Winchester hard drive, the heads followed the servo markings, writing data between them at the appropriate time. That's why they were so expensive compared to the previous 8-inch, 1MB floppies that came before these. Those were initialized entirely by the drive; wherever the heads landed, that was track zero and so on.
+The 1MB floppy drives used on the B80/B90 series had one major flaw. The heads were offset from one another and when it was time to read or write, a solenoid would pick and allow a spring-loaded arm with a tiny pad of cotton to push against the diskette media from the other side, which in turn pushed against the head so that it could read or write.
+Many of our B80s/B90s were located in filthy environments, such as manufacturing plants and steel mills. These cotton pads would eventually pick up enough grit that they would start cutting circular patterns on the diskettes, causing data loss. The operator would toss the diskette, put in a new one, and again the cuts showed up. Some cases were so stubborn that they ruined entire months of data because they trashed all the diskettes before calling in with a problem.
+Another thing that happened was mostly self-inflicted by us field engineers. If a customer would call and say they had disks they couldn't read, guys would run out the door with an alignment disk, oscilloscope, and tribit meter to 'align' the drive. I remember our branch manager wondering out loud why the techs had to constantly align these drives. I wondered too and had noticed that those arms with the cotton pads, which we constantly replaced, were coming in with varying heights—the height of the pad varied by quite a bit between them.
+As it happened, a drive in our demo room was giving read errors and my buddy dragged the alignment tools out to it. Before he started, I asked if I could look at it. Sure enough, the pads someone had just changed were too tall. I replaced them with a proper set that I had and it fixed the drive. The guys couldn't believe it. I furthermore told them that this same issue was the root of all the read/write problems and that 99% of the alignments they were doing were unnecessary; the height difference was enough to cause the pad to not press the media against the head properly.
+That was my first major contribution to the team in Binghamton, NY, where our office was. As for the B80/B90 itself, there are all kinds of stories about those. They were sold to customers who previously used the 'L' series. The long and short of it is they were put out in a hurry and corners were cut, but by the time the PC revolution kicked them to the curb, they were a solid product. There was even a desktop B95 at the very end, but I can recall only a couple of customers taking delivery; by then everyone was buying PCs and handing their money over to Microsoft!"
+</p>
+
+<h3>A huge thank you to Steve for his generosity and for allowing me to publish this story. It’s these personal insights that truly bring vintage technology to life. I will be adding photos of the physical specimen to this post as soon as it arrives in my collection.</h3>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <p>Contact via email: grzegorz.karta@gmail.com</p>
+        <p>&copy; 2025 Arrow2520042. Licensed under the MIT License.</p>
+        <nav class="scroll-up"></nav>
+    </footer>
+</body>
+</html>
