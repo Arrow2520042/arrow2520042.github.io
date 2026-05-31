@@ -103,10 +103,10 @@ nav.header-link {
 }
 
 .gallery-desc {
-    font-size: 18px;
+    font-size: 16px;
     font-family: sans-serif;
     color: #333;
-    margin: 10px 0 0 0;
+    margin: 3px 0 0 0;
     padding: 0 0 0 0;
     text-align: left;
     white-space: normal;
@@ -348,6 +348,14 @@ body.fade-out {
     height: auto;
     border: 1px solid #000;
     background-color: #fff;
+}
+
+.william-photo-full {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0 16px 0;
 }
 
 .william-photo-left {
@@ -1175,7 +1183,7 @@ body.fade-out {
     }
 
     .gallery-desc {
-        font-size: 20px;
+        font-size: 10px;
         text-align: left;
     }
 
