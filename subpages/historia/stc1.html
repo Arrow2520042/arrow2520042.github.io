@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js" defer></script>
+    <meta name="description" content="The STC 8350 failure story, the drive wars, and the engineering lessons behind StorageTek's 8380 redesign.">
+    <meta name="keywords" content="StorageTek, STC 8350, STC 8380, drive wars, mainframe storage history, data storage history">
+    <meta name="author" content="Arrow2520042, Grzegorz Karta">
+    <link rel="icon" type="image/png" href="../../grafiki/ico.png">
+    <title>The STC 8350 Failure and Lessons from the Drive Wars</title>
+    <link rel="canonical" href="https://tapesandcassettes.com/subpages/historia/stc1.html">
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="header-button" data-url="../historie.html"></nav>
+        <div class="header-brand-section desktop-version">
+            <img src="../../grafiki/icox64.png" class="header-logo" width="64" height="64" alt="Tapes and Cassettes logo">
+            <div class="header-text-content">
+                <nav class="header-link" data-url="../../index.html">Tapes & Cassettes</nav>
+                <p class="gallery-desc">A visual collection of obsolete and rare data storage media formats.</p>
+            </div>
+        </div>
+        <img src="../../grafiki/icox64.png" class="header-logo-mobile" width="64" height="64" alt="Tapes and Cassettes logo">
+        <div class="mobile-version">
+            <div class="header-text-content">
+                <nav class="header-link" data-url="../../index.html">Tapes & Cassettes</nav>
+                <p class="gallery-desc">A visual collection of obsolete and rare data storage media formats.</p>
+            </div>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+        <nav class="main-nav">
+            <div class="centered-nav-wrapper">
+                <ul class="nav-menu"></ul>
+            </div>
+        </nav>
+        <nav class="scroll-down"></nav>
+    </header>
+
+    <main class="container info-container">
+        <section class="info-card william-story-card">
+            <h1>Story 1: The STC 8350 Failure and Lessons from the "Drive Wars"</h1>
+            <div class="william-story-content">
+                <img src="../../grafiki/8350 and 8650.jpg" class="william-photo william-photo-left" alt="StorageTek STC 8350 and 8650 disk drive">
+                <p>
+                    The early 1980s brought a brutal technological war to the mainframe storage market. StorageTek decided to challenge IBM’s dominant position by introducing its own storage solutions. However, the company's reputation was nearly destroyed by a single, catastrophic engineering flaw rooted in pure chemistry and mechanical design: the STC 8350 DASD (Direct Access Storage Device). The disaster was so severe that before John joined Product Test (which later relocated to the main campus and was renamed Product Evaluation), he firmly trusted StorageTek's tape systems but strictly refused to allow any of their disk drives into his account. This was after many of his industry colleagues lost their data—and their jobs—due to this specific disk drive.</p>
+<h2>The Chemical Trap and Horizontal Platters</h2>
+<p>
+The 8350/8360 DASD was a string of drives with approximately the same physical footprint as the later 8380. The STC 8350 utilized a horizontal platter orientation, which subjected the read/write heads heavily to the forces of gravity. To make matters worse, a highly advanced lubricant called Krytox was used on the data disks. During intense operation, the internal drive enclosures overheated, causing the lubricant to liquefy.
+</p>
+<p>As the horizontal platters spun, centrifugal force pushed the liquid to the outer edges—exactly where the data heads rested when the machine was powered down. As the drive cooled, the lubricant hardened, completely gluing the heads to the surface and causing fatal stiction. Upon the next power-up, the massive torque of the motor violently tore the heads from their arms, permanently destroying the upper platters, where the damage was most severe.
+</p>
+<p>StorageTek never managed to fully fix the 8350. The crisis created a massive bottleneck, with warehouses filled with thousands of defective, unshippable units, directly leading STC into Chapter 11 bankruptcy in late October 1984.
+</p>
+<h2>A New Approach: The STK 8380 Project</h2>
+<p>When the company developed its successor, the STK 8380, the engineering team completely shifted their approach. By this time, the company was widely known as the STK team. The 8380 was designed as a highly scalable string of dual-disk units daisy-chained behind disk controllers. Mechanically, the platters were flipped to operate vertically. This simple rotation changed everything—as John noted, gravity finally worked in the engineers' favor, preventing the heads from dropping flat onto residual liquid.
+However, the 8380 came with its own unique engineering challenges:
+    </p><p>• The Bimetallic Thermostat as an Earthquake Detector: To prevent overheating, a bimetallic thermostat was installed at the top of the dual-disk units. While excellent for safety, at operating temperature the thermostat became hypersensitive to vibration. This problem actually made it to the release phase and was already in clients' hands when the cause—such as a Field Engineer (FE) dropping a tool kit onto an operating unit—was finally discovered and replicated in Product Evaluation. Engineers had to reprogram the microcode to introduce a precise time delay, preventing accidental thermal shutdowns.
+    </p><img src="../../grafiki/tez na glowny 8380.jpg" class="william-photo william-photo-right" alt="StorageTek STC 8380 drive redesign"><p>• The Line Printer Dust Problem: Because the STK 8380 drive pulled cool air directly from the raised floor of the data center, it ran much cooler than older drives, but it acted like a giant vacuum cleaner. Data centers were perpetually drowning in tons of paper—supplies for the massive, ever-hungry line printers were brought in bulk on huge pallets rather than standard carts. While the fine dust and paper particles generated by these line printers were not a source of constant, sweeping crashes, the dust issue was certainly a contributing factor to continuing field failures and required disk replacements. Once the problem was identified and mitigation procedures were established, the frequency of these failures was significantly reduced.
+    </p>
+    <p>• Dirty Grounds and the Diode Trick: A flaw was discovered where electrical noise would bleed back into the electronics whenever an onboard convenience outlet was used (e.g., for a vacuum cleaner). While this noise bleed-back was a common issue across all product lines, the power supply engineers resisted adding a diode. Instead, they took a cheaper route and simply removed the onboard convenience outlet entirely from the disk design so that service equipment like vacuums could no longer be plugged into them. However, it was during the development of the Timberline tape drives that it was definitively proven how outside electrical noise could compromise circuits. The diode was eventually adopted for Timberline, where it proved to be very effective.
+</p>
+<h2>Competition with IBM and the Sweatshirt Party</h2><img src="../../grafiki/8380 otwarty koniec.jpg" class="william-photo william-photo-right" alt="StorageTek STC 8380 drive with open enclosure"> 
+<p>The intense market pressure bred not only desperation but also sharp humor. IBM engineers were struggling with their own launch issues regarding the IBM 3380 drives. To hide failures from customers, they set up special screens around their machines and secretly heated them. The STC team would wait for the IBM personnel to go to lunch, then slip under the raised floor, crawl beneath the competitor's screens, and lift floor tiles to photograph their troubleshooting tricks.
+At headquarters, frustration over a grueling 18-month shipping delay on the 8380 pushed management to their limits. When the product finally achieved General Availability (GA), the VP of Development threw a party for the staff. He distributed custom sweatshirts, each printed with a different delayed shipping date. During the party, the VP jokingly tried to blame John for three of those missed deadlines. John shot back bluntly, "Then you owe me a sweatshirt." The senior manager smiled broadly, deeply respecting the engineer's unwavering integrity.
+</p>           
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <p>Contact via email: grzegorz.karta@gmail.com</p>
+        <p>&copy; 2025 Arrow2520042. Licensed under the MIT License.</p>
+        <nav class="scroll-up"></nav>
+    </footer>
+</body>
+</html>

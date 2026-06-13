@@ -1,5 +1,5 @@
 const SHARED_NAV_MENU_TEMPLATE = `
-<li><a href="/subpages/historie.html" class="wanted-list header-shortcut info-shortcut">Thank you page!</a></li>
+<li><a href="/subpages/historie.html" class="wanted-list header-shortcut info-shortcut">Sick stories!</a></li>
 <li class="dropdown">
     <a href="/subpages/page1.html">Data Storage Media ▾</a>
     <ul class="dropdown-content">
