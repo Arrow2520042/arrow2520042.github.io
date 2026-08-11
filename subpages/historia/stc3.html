@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js" defer></script>
+    <meta name="author" content="Arrow2520042, Grzegorz Karta">
+    <link rel="icon" type="image/png" href="../../grafiki/ico.png">
+    <title>The 4480, 4490, and the Birth of &quot;Mr. Destructor&quot;</title>
+    <meta name="description" content="The 4480 and 4490 tape drives, microcode debugging, and the story that earned John the nickname &quot;Mr. Destructor&quot; at StorageTek.">
+    <meta name="keywords" content="StorageTek, 4480, 4490, Mr. Destructor, Tape Engineering, microcode, product testing, data storage history">
+    <link rel="canonical" href="https://tapesandcassettes.com/subpages/historia/stc3.html">
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="header-button" data-url="../historie.html"></nav>
+        <div class="header-brand-section desktop-version">
+            <img src="../../grafiki/icox64.png" class="header-logo" width="64" height="64" alt="Tapes and Cassettes logo">
+            <div class="header-text-content">
+                <nav class="header-link" data-url="../../index.html">Tapes & Cassettes</nav>
+                <p class="gallery-desc">A visual collection of obsolete and rare data storage media formats.</p>
+            </div>
+        </div>
+        <img src="../../grafiki/icox64.png" class="header-logo-mobile" width="64" height="64" alt="Tapes and Cassettes logo">
+        <div class="mobile-version">
+            <div class="header-text-content">
+                <nav class="header-link" data-url="../../index.html">Tapes & Cassettes</nav>
+                <p class="gallery-desc">A visual collection of obsolete and rare data storage media formats.</p>
+            </div>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+        <nav class="main-nav">
+            <div class="centered-nav-wrapper">
+                <ul class="nav-menu"></ul>
+            </div>
+        </nav>
+        <nav class="scroll-down"></nav>
+    </header>
+
+    <main class="container info-container">
+        <section class="info-card william-story-card">
+            <h1>The 4480, 4490, and the Birth of &quot;Mr. Destructor&quot;</h1>
+            <div class="william-story-content">
+<p>While still in Product Evaluation, John&#39;s deep technical expertise was becoming a
+crucial asset. Already well-versed in IBM operating systems, his skills were further
+sharpened in early 1983. Following the 1982 reorganization, Jessie—one of the
+founders of STC and the CEO at the time—signed the paperwork to send John to the
+IBM education center in Chicago, where he added MVS internals to his repertoire
+and mastered machine language.</p>    
+<br><br>
+<p>This foundation was essential as StorageTek was juggling multiple projects, some of
+which were disastrous. In the mid-1980s, the company was dealing with the 8650
+disk (the big brother to the 8350). It was highly likely that the 8650 was the primary
+reason for the company&#39;s 1984 bankruptcy filing. Developed using in-house
+specifications that were nowhere near as demanding as MILSPEC, the project was
+thrown together using a &quot;nine women - one month&quot; marketing concept. It was sold
+with promised delivery dates before it even arrived in what was Product Test at that
+time (before the department moved to the main campus after the bankruptcy). Field
+Engineers reported how frequently they crashed at customer sites, and warehouses
+at headquarters were full of an oversupply that simply wouldn&#39;t sell. The testing
+phase was just as chaotic. Bob and John Kennedy had to take the 8650 to Ball
+Corporation for a &quot;shake test&quot; because Steve Keijeski hadn&#39;t built StorageTek&#39;s own
+shake lab yet. The result? During the standard shipping profile test, a literal bushel
+basket of parts fell off the 8650.</p>
+<br>
+<img src="../../grafiki/STC8650.jpg" style="display: block; margin: 0 auto; width: 100%; height: auto;" alt="8650">
+<p>Eventually, the focus shifted to new tape products, but the beginnings were just as
+chaotic. The 4480 was developed first as an 18-track reel-to-reel product offering.
+Here’s a laugh: the very first 4480 delivered to Product Evaluation blew up the
+moment they plugged it in. The prototype, built in Tape Engineering, lacked any
+checks to ensure the 440-volt supply power was correctly phased. By a stroke of
+great luck, this explosive mishap revealed that the entire LVSL4 building was
+incorrectly phased, leading to the entire headquarters campus being checked and
+other oversights corrected on the spot. Tape engineers learned their lesson quickly
+and added power checking to all power supplies for the 4480 and subsequent tape
+products.</p>
+<br><br>
+<p>With the hardware powered safely, the early microcode for the 4480—and later the
+4490, a 36-track reel-to-reel drive leveraged off the 4480—proved to be a beast to
+tame. One of the most intense periods involved testing microcode to fix field issues.
+The tape director would personally hand-deliver fresh code on a Friday evening on
+his way home, and John would spend the weekend relentlessly testing it to have
+results ready by Monday.</p>
+<br><br>
+<p>Normal product testing for the 4480 and 4490 was basically finished, and the 4490
+(SILVERTON) was released in September 1992. However, a significant field issue
+surfaced afterward in customer feedback: the infamous &quot;BLO&quot;—Buffer Log Overflow.
+The internal buffer stack in the controller would fill up to capacity and simply crash.
+The tape director contacted John directly, asking if he could reproduce the issue. It
+took John less than three days to recreate the failure. They solved it in both the 4480
+and 4490 by inserting a software &quot;governor&quot; to throttle the system and maintain
+stability.</p>
+<br><br>
+<p>This solid result earned him a legendary reputation, perfectly captured on the label of
+a bright pink floppy disk containing the BLO2 code, where the lead microcode
+engineer wrote a special job title just for him: &quot;Mr. Destructor.&quot;</p>
+<br>
+<img src="../../grafiki/FDD1.jpg" class="william-photo william-photo-left" alt="FDD1">
+<p>Successfully fixing the BLO code was the main
+reason Tape Engineering made him an offer he
+couldn&#39;t refuse. John transitioned full-time to
+Tape Sustaining Engineering. To fulfill their
+commitment to making product quality a priority,
+he created the &quot;Alpha Lab&quot; in LSVL 4—a
+space designed to recreate field failures. (John
+even kept that famous &quot;Problem Solving
+Flowchart&quot; on his office wall!). Crucially, the BLO
+criteria were officially added to the lab&#39;s &quot;lessons
+learned&quot; for future products.</p>
+<br><br><br><br><br><br>
+<p>It was also during this period in the early 1990s that
+John took his career a step further. Taking courses
+after work at the headquarters campus, he earned
+his MBA. As he put it, he could already speak
+&quot;computer&quot; as well as &quot;engineer,&quot; but he realized he
+was missing the language skills of the &quot;ivory tower&quot;
+to effectively communicate with upper
+management.</p>
+<br><br>
+<img src="../../grafiki/Chart.jpg" class="william-photo william-photo-left" alt="chart">
+<p>There was nothing like using lessons learned to get
+started on the next lines of products. The 4490&#39;s
+36-track head assembly was leveraged in the new
+Timberline cartridge drive (released in 1993), which
+was developed for use in the massive Powerhorn
+libraries. However, it had its own share of
+issues—over 500 conditions were dummied off in
+the code as &quot;Should Not Occur&quot; (SNO) to save time and money, causing the machine
+to simply crash when they did happen. The Alpha Lab, now fully established, was
+ready for the challenge.</p>
+<img src="../../grafiki/Timberline Tape.jpg" style="display: block; margin: 0 auto; width: 40%; height: auto;" alt="Timberline Tape">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <p>Contact via email: grzegorz.karta@gmail.com</p>
+        <p>&copy; 2025 Arrow2520042. Licensed under the MIT License.</p>
+        <nav class="scroll-up"></nav>
+    </footer>
+</body>
+</html>
