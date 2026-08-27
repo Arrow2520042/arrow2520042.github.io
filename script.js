@@ -103,40 +103,16 @@ const SHARED_NAV_MENU_TEMPLATE = `
     </ul>
 </li>
 <li><a href="/subpages/page20.html" class="wanted-list header-shortcut">Wanted</a></li>
+<li><a href="/subpages/about.html" class="about-shortcut header-shortcut">About Me</a></li>
 `;
 
 const NAV_MENU_DESKTOP_BREAKPOINT = 1300;
-
-const SHARED_HEADER_ACTIONS = [];
 
 document.addEventListener("DOMContentLoaded", () => {
     const navMenu = document.querySelector(".nav-menu");
     if (navMenu) {
         navMenu.innerHTML = SHARED_NAV_MENU_TEMPLATE;
     }
-
-    if (!SHARED_HEADER_ACTIONS.length) {
-        return;
-    }
-
-    const header = document.querySelector(".header");
-    const hamburger = document.querySelector(".hamburger");
-    if (!header || !hamburger) {
-        return;
-    }
-
-    const actions = document.createElement("div");
-    actions.className = "header-actions";
-
-    SHARED_HEADER_ACTIONS.forEach((action) => {
-        const button = document.createElement("a");
-        button.className = "header-action-button";
-        button.href = action.href;
-        button.textContent = action.label;
-        actions.appendChild(button);
-    });
-
-    header.insertBefore(actions, hamburger);
 });
 
 //Obsluga fade-in fade-out

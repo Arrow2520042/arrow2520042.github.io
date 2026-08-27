@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js" defer></script>
+    <meta name="author" content="Arrow2520042, Grzegorz Karta">
+    <meta name="description" content="The story of the StorageTek ACS 4400 library, the robotic silo system, and the engineering challenges behind automated tape storage.">
+    <meta name="keywords" content="StorageTek, ACS 4400, automated tape library, robotic silo, tape automation, Nearline, PowderHorn, mainframe archive, STC">
+    <link rel="icon" type="image/png" href="../../grafiki/ico.png">
+    <title>The Automated Cartridge System (ACS) and the Silo Era | Tapes & Cassettes</title>
+    <link rel="canonical" href="https://tapesandcassettes.com/subpages/historia/stc4.html">
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="header-button" data-url="../historie.html"></nav>
+        <div class="header-brand-section desktop-version">
+            <img src="../../grafiki/icox64.png" class="header-logo" width="64" height="64" alt="Tapes and Cassettes logo">
+            <div class="header-text-content">
+                <nav class="header-link" data-url="../../index.html">Tapes & Cassettes</nav>
+                <p class="gallery-desc">A visual collection of obsolete and rare data storage media formats.</p>
+            </div>
+        </div>
+        <img src="../../grafiki/icox64.png" class="header-logo-mobile" width="64" height="64" alt="Tapes and Cassettes logo">
+        <div class="mobile-version">
+            <div class="header-text-content">
+                <nav class="header-link" data-url="../../index.html">Tapes & Cassettes</nav>
+                <p class="gallery-desc">A visual collection of obsolete and rare data storage media formats.</p>
+            </div>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+        <nav class="main-nav">
+            <div class="centered-nav-wrapper">
+                <ul class="nav-menu"></ul>
+            </div>
+        </nav>
+        <nav class="scroll-down"></nav>
+    </header>
+
+    <main class="container info-container">
+        <section class="info-card william-story-card">
+            <h1>The Automated Cartridge System (ACS), "The Silo," and the Era of Robotics</h1>
+            <div class="william-story-content">
+                <p>In the old days, every job in the data center relied on "tape in, tape out." Temporary disk storage was just starting to be used to string individual job steps together, but the ultimate input and output was always tape. Before the era of automation, mainframe data centers relied heavily on human operators to scramble around continuously mounting and dismounting tapes. John knew this pain firsthand—when he was originally hired at DLE as an operator trainee, being a "tape monkey" was exactly one of his tasks! 
+By the late 1980s, the need to break this human bottleneck was critical. StorageTek began working on automated solutions, though the very earliest "prototype library" was simply a plywood mockup that CEO Jessie had actually forbidden them to build.</p>
+<img src="../../grafiki/STK 4400 Black and white.jpg" style="display: block; margin: 0 auto;" alt="Black-and-white photo of the StorageTek ACS 4400 automated tape library">
+<h2>The Paranoia of Prying Eyes</h2>
+<p>Bringing the first Automated Cartridge System (ACS) to life required intense testing in a highly secretive atmosphere. IBM Customer Engineers (IBM SEs) were always lurking around the facility, so paranoia was naturally high. Prior to building a massive ten-foot-high chain-link fence around Product Evaluation (PE) and Corporate Product Acceptance Testing (CPAT), the very first library that CPAT tested was entirely covered in BLACK PLASTIC just to prevent those prying eyes from seeing it. </p>
+<h2>The Dodecahedron and the Broom Handle</h2>
+<p>When the ACS 4400 (affectionately known as "The Silo") was finally realized, it was a mechanical marvel. It was a massive dodecahedron (12-sided) robotic cell. Inside, a central robotic arm could retrieve any one of thousands of tape cartridges and mount it in seconds. </p>
+<img src="../../grafiki/Robot STK-4400.jpg" style="display: block; margin: 0 auto;" alt="StorageTek ACS 4400 robotic tape library installation">
+<br>
+<p>The vision system guiding the robot relied on infrared cameras—a decision made after early testing and Field Engineer (FE) reports revealed that the first version of the cameras, which used visual light, were too prone to getting false signals.</p>
+<img src="../../grafiki/InfraRed.jpg" class="william-photo william-photo-left" style="height: 102%; width: auto;" alt="Infrared camera system used by the STK 4400 robot">
+<p>Testing the hardware and software was divided. CPAT handled the complex Host Software Component (HSC)—the software that tricked the mainframe into thinking a human was mounting the tapes—while John in PE focused mainly on the hardware. 
+As the product evolved beyond the initial library under the black plastic, StorageTek engineers realized they needed to expand the system's capacity. They designed a Pass-Thru Port (PTP) to connect multiple silos together. If all the available tape drives in one silo were busy, the PTP allowed a tape to be passed to an adjacent silo that had a free drive. This ingenious redesign eventually allowed connecting up to 16 libraries together (holding 96,000 tapes), and later expanded to a staggering 24 silos housing up to 144,000 tapes! 
+It was during the testing of these connected twin libraries in CPAT that John discovered a critical physical flaw. A broom handle fell between the libraries and completely jammed the transfer of tapes through the PTP! This simple discovery resulted in the engineering team designing a special protective cover for the port. </p>
+<h2>The Software Battle: Host Software Component (HSC)</h2>
+<p>The hardware, however, was only half the battle. IBM, seeing its manual tape drive dominance threatened, aggressively pushed back. They didn't just attempt to sabotage StorageTek's efforts in MVS (which was the primary operating system at the time). STC engineers also had to contend with straight OS and VM. IBM tried to alter proprietary operating system parameters and allocation algorithms across these systems to make it difficult for third-party automated hardware to intercept tape mount requests. The software engineers at STC had to constantly reverse-engineer and patch HSC to ensure it could seamlessly hook into these various IBM operating systems.</p>
+<img src="../../grafiki/silo.jpg" style="display: block; margin: 0 auto;" alt="Large automated storage silo installation at StorageTek">
+<p>The success of HSC allowed the ACS 4400 to dominate the market, establishing StorageTek as the undisputed king of automated enterprise archiving and paving the way for the legendary Nearline and PowderHorn systems of the 1990s.</p>
+<div class="keychain-pair">
+    <img src="../../grafiki/Brelok_1.jpg" class="keychain-photo keychain-photo-left" alt="Silver keychain commemorating the 1988 to 1998 decade of excellence">
+    <img src="../../grafiki/Brelok_2.jpg" class="keychain-photo keychain-photo-right" alt="Silver keychain commemorating the Nearline storage system">
+</div>
+
+</div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <p>Contact via email: grzegorz.karta@gmail.com</p>
+        <p>&copy; 2025 Arrow2520042. Licensed under the MIT License.</p>
+        <nav class="scroll-up"></nav>
+    </footer>
+</body>
+</html>

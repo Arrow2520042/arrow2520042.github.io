@@ -350,6 +350,36 @@ body.fade-out {
     background-color: #fff;
 }
 
+.keychain-pair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    margin: 22px 0 10px;
+    padding: 8px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.keychain-photo {
+    width: auto;
+    max-width: min(42%, 440px);
+    height: 470px;
+    object-fit: contain;
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    background: #e8e8e8;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+.keychain-photo-left {
+    height: 470px;
+}
+
+.keychain-photo-right {
+    height: 470px;
+}
+
 .william-photo-full {
     float: none;
     display: block;
@@ -1454,17 +1484,22 @@ body.fade-out {
 
     .nav-menu > li > a,
     .wanted-list,
+    .header-shortcut,
     .header-action-button {
         color: #000000;
         text-decoration: none;
-        padding: 0 10.5px;
+        padding: 0 18px;
         height: 50px;
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         box-sizing: border-box;
         border: 2px solid #000;
+        background-color: #84d6bd;
         white-space: nowrap;
         font-size: clamp(13.7px, 0.95vw, 18.9px);
+        font-weight: 700;
+        line-height: 1;
     }
 
     .header-shortcut {
@@ -1472,7 +1507,21 @@ body.fade-out {
         text-align: center;
     }
 
-    .nav-menu > li > a:hover {
+    .about-shortcut {
+        background-color: #ffffff;
+        min-width: 120px;
+    }
+
+    .nav-menu > li > a:hover,
+    .wanted-list:hover,
+    .header-shortcut:hover,
+    .header-action-button:hover {
+        color: #ffffff;
+        background-color: #000000;
+    }
+
+    .about-shortcut:hover {
+        background-color: #000000;
         color: #ffffff;
     }
 
