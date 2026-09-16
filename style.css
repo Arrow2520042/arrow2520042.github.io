@@ -1882,3 +1882,12 @@ body.fade-out {
         height: 18.48vh !important;
     }
 }
+
+figcaption {
+  font-style: italic;
+  text-align: center;
+}
+
+.wyśrodkowany {
+  text-align: center;
+}
