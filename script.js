@@ -116,9 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Obsluga fade-in fade-out
-document.addEventListener("DOMContentLoaded", () => {
+function showPageAfterNavigation() {
     document.body.classList.remove("fade-out");
     document.body.classList.add("fade-in");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    showPageAfterNavigation();
 
     const links = document.querySelectorAll("a");
     links.forEach(link => {
@@ -138,6 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+window.addEventListener("pageshow", showPageAfterNavigation);
 //Obsluga nav
 document.addEventListener("DOMContentLoaded", () => {
     const navElements = document.querySelectorAll(".block-wrapper, .header-link, .header-button");
